@@ -8,16 +8,16 @@ function showCategoriesList(array){
 
         htmlContentToAppend += `
         <div class="list-group-item list-group-item-action">
-        <div class="row" id="` + category.name + `">
+        <div class="row" id="` + product.name + `">
                 <div class="col-3">
-                    <img src="` + category.imgSrc + `" alt="` + category.description + `" class="img-thumbnail">
+                    <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
                 </div>
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1">`+ category.name +`</h4>
-                        <small class="text-muted">Costo:`+ category.currency + ``+ category.cost + `</br>Vendidos:` + category.soldCount + ` </small>
+                        <h4 class="mb-1">`+ product.name +`</h4>
+                        <small class="text-muted">Costo:`+ product.currency + ``+ product.cost + `</br>Vendidos:` + category.soldCount + ` </small>
                     </div>
-                    <div> `+ category.description + ` </div>
+                    <div> `+ product.description + ` </div>
 
                 </div>
             </div>
