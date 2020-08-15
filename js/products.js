@@ -4,11 +4,11 @@ function showCategoriesList(array){
 
     let htmlContentToAppend = "";
     for(let i = 0; i < array.length; i++) {
-        let category = array[i];
+        let product = array[i];
 
         htmlContentToAppend += `
         <div class="list-group-item list-group-item-action">
-        <div class="row" id="` + product.name + `">
+        <div class="row">
                 <div class="col-3">
                     <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
                 </div>
@@ -24,7 +24,7 @@ function showCategoriesList(array){
         </div>
         `
 
-        document.getElementById("container p-5").innerHTML = htmlContentToAppend;
+        document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
     }
 }
 
