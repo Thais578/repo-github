@@ -34,12 +34,12 @@
   <form class="form-signin">
   <img class="mb-4" src="img/login.png" alt="" width="300" height="100">
 <h1 class="h3 mb-3 font-weight-normal">Iniciar sesión</h1>
-<label for="user" class="User">Usuario:</label>
-<input type="user" id="email" class="usuario" placeholder="Email">
+<label for="inputUser" class="sr-only">Usuario:</label>
+<input type="user" id="InputUser" class="form-control" placeholder="Usuario" required>
 <div id="error"></div>
 <p></p>
-<label for="Password" class="password">Contraseña:</label>
-<input type="password" id="contraseña" class="password" placeholder="Contraseña">
+<label for="inputPassword" class="sr-only">Contraseña:</label>
+<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
 <div id="error"></div>
 <p></p>
 <div class="checkbox mb-3">
@@ -47,9 +47,15 @@
     <input type="checkbox" value="remember-me"> Recordarme
   </label>
 </div>
-<button class="btn bt n-lg btn-primary btn-block" type="button" onclick="validar();">Ingresar</button>
+<button class="btn bt n-lg btn-primary btn-block" type="button" onclick="validar()">Ingresar</button>
 </form>
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
 </body>
 </html>
+
+
+ 
+  
+  
+  

@@ -1,11 +1,12 @@
 function validar() {
-var email= document.getElementById("email").value;
-var contraseña= document.getElementById("contraseña").value;
-
-  if(email == null) {
+var InputUser= document.getElementById("InputUser").value;
+var inputPassword= document.getElementById("inputPassword").value;
+console.log("inputPassword:",inputPassword)
+console.log("inputUser:",InputUser)
+  if(InputUser == null && "") {
     document.getElementById("error").innerHTML="Inserte nuevamente el usuario"
   
-}else if (contraseña == null) {
+}else if (inputPassword == null && "") {
   document.getElementById("error").innerHTML="Inserte nuevamente la contraseña"
 }else{
 window.location.href="Página.html"
