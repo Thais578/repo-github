@@ -1,11 +1,14 @@
-document.querySelector('#redirect').addEventListener('click', () => {
-    window.location.href = 'https://thais578.github.io/repo-github/'
-});
+const user = document.getElementById("user");
+const password = document.getElementById("password");
+const form = document.getElementById("form");
+const p = document.getElementById("alertas");
 
-
-
-
-
+form.addEventListener("submit", e=> {
+  e.preventDefault()
+  if(nombre.value.length <6) {
+    alert("nombre corto")
+  }
+})
 
 
 
