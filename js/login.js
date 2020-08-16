@@ -7,7 +7,7 @@ var password= document.getElementById('password').value;
 }else if (password == null) {
   document.getElementById('error').innerHTML="Inserte nuevamente el usuario"
 }else{
-window.location.href='Pagina principal.html'
+window.location.href='Pagina.html'
 }
 }
 
