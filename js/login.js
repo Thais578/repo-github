@@ -1,13 +1,14 @@
 function validar() {
-  var user= document.getElementById("user" ).value;
-var password= document.getElementById('password').value;
-  if(user == null) {
-    document.getElementById('error').innerHTML="Inserte nuevamente el usuario"
+var email= document.getElementById("email").value;
+var contraseña= document.getElementById("contraseña").value;
+
+  if(email == null) {
+    document.getElementById("error").innerHTML="Inserte nuevamente el usuario"
   
-}else if (password == null) {
-  document.getElementById('error').innerHTML="Inserte nuevamente el usuario"
+}else if (contraseña == null) {
+  document.getElementById("error").innerHTML="Inserte nuevamente la contraseña"
 }else{
-window.location.href=""
+window.location.href="Página.html"
 }
 }
 

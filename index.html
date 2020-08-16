@@ -35,18 +35,19 @@
   <img class="mb-4" src="img/login.png" alt="" width="300" height="100">
 <h1 class="h3 mb-3 font-weight-normal">Iniciar sesión</h1>
 <label for="user" class="User">Usuario:</label>
-<input type="user" id="email" class="user" placeholder="Email">
+<input type="user" id="email" class="usuario" placeholder="Email">
+<div id="error"></div>
 <p></p>
 <label for="Password" class="password">Contraseña:</label>
-<input type="password" id="password" class="password" placeholder="Contraseña">
+<input type="password" id="contraseña" class="password" placeholder="Contraseña">
+<div id="error"></div>
 <p></p>
 <div class="checkbox mb-3">
   <label>
     <input type="checkbox" value="remember-me"> Recordarme
   </label>
 </div>
-<button class="btn bt n-lg btn-primary btn-block" type="button" id="redirect" click='validar();'>Ingresar</button>
-<div id='error'></div>
+<button class="btn bt n-lg btn-primary btn-block" type="button" onclick="validar();">Ingresar</button>
 </form>
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
