@@ -1,12 +1,12 @@
 function validar() {
-var InputUser= document.getElementById("InputUser").value;
+var inputUser= document.getElementById("inputUser").value;
 var inputPassword= document.getElementById("inputPassword").value;
 console.log("inputPassword:",inputPassword)
-console.log("inputUser:",InputUser)
-  if(InputUser == null && "") {
+console.log("inputUser:",inputUser)
+  if(inputUser == null || inputUser == "") {
     document.getElementById("error").innerHTML="Inserte nuevamente el usuario"
   
-}else if (inputPassword == null && "") {
+}else if (inputPassword == null || inputPassword == "") {
   document.getElementById("error").innerHTML="Inserte nuevamente la contraseña"
 }else{
 window.location.href="Página.html"
