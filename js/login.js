@@ -1,22 +1,15 @@
-const user = document.getElementById("email");
-const password = document.getElementById("password");
-const form = document.getElementById("form");
-const p = document.getElementById("alertas");
-
-form.addEventListener("submit", e=>{
-  e.preventDefault()
-  let alertas = ""
-  let entrar= false
-  let regexEmail= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
-  if(user.value.length <6) {
-    alertas += "El usuario no es válido <br>"
-    entrar = true
-  }
-  if(!regexEmail.test(email.value)) {
-    alertas += "El usuario no es válido <br>"
-    entrar = true
-  }
-})
+function validar() {
+  var user= document.getElementById("user" ).value;
+var password= document.getElementById('password').value;
+  if(user == null) {
+    document.getElementById('error').innerHTML="Inserte nuevamente el usuario"
+  
+}else if (password == null) {
+  document.getElementById('error').innerHTML="Inserte nuevamente el usuario"
+}else{
+window.location.href='Pagina principal.html'
+}
+}
 
 
 
