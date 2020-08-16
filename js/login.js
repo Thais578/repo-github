@@ -1,12 +1,20 @@
-const user = document.getElementById("user");
+const user = document.getElementById("email");
 const password = document.getElementById("password");
 const form = document.getElementById("form");
 const p = document.getElementById("alertas");
 
-form.addEventListener("submit", e=> {
+form.addEventListener("submit", e=>{
   e.preventDefault()
-  if(nombre.value.length <6) {
-    alert("nombre corto")
+  let alertas = ""
+  let entrar= false
+  let regexEmail= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
+  if(user.value.length <6) {
+    alertas += "El usuario no es válido <br>"
+    entrar = true
+  }
+  if(!regexEmail.test(email.value)) {
+    alertas += "El usuario no es válido <br>"
+    entrar = true
   }
 })
 
