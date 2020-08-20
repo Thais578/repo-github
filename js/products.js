@@ -1,7 +1,7 @@
 const ORDER_ASC_BY_PRICE = "PMPm";
 const ORDER_DESC_BY_PRICE= "PmPM";
-const ORDER_BY_PROD_SOLD = "Cant.";
-var categoriesArray = [];
+const ORDER_BY_PROD_SOLDCOUNT = "Cant.";
+var currentCategoriesArray = [];
 var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
@@ -21,26 +21,26 @@ function sortCategories(criteria, array){
             if ( a.price < b.price ){ return 1; }
             return 0;
         });
-    }else if (criteria === ORDER_BY_PROD_COUNT){
+    }else if (criteria === ORDER_BY_PROD_SOLDCOUNT){
         result = array.sort(function(a, b) {
-            let aCount = parseInt(a.productSold);
-            let bCount = parseInt(b.productSold);
+            let asoldCount = parseInt(a.soldCount);
+            let bsoldCount = parseInt(b.soldCount);
 
-            if ( aCount > bCount ){ return -1; }
-            if ( aCount < bCount ){ return 1; }
+            if ( asoldCount > bsoldCount ){ return -1; }
+            if ( asoldCount < bsoldCount ){ return 1; }
             return 0;
         });
     }
 
     return result;
 
-function showCategoriesList(array){
+function showCategoriesList(){
 
     let htmlContentToAppend = "";
-    for(let i = 0; i < array.length; i++) {
-        let product = array[i];
-        if (((minCount == undefined) || (minCount != undefined && parseInt(category.productSold) >= minCount)) &&
-            ((maxCount == undefined) || (maxCount != undefined && parseInt(category.productSold) <= maxCount))){
+    for(let i = 0; i < currentCategoriesArray.length; i++) {
+        let product = currentCategoriesArray[i];
+        if (((minCount == undefined) || (minCount != undefined && parseInt(product.soldCount) >= minCount)) &&
+            ((maxCount == undefined) || (maxCount != undefined && parseInt(product.soldCount) <= maxCount))){
 
         htmlContentToAppend += `
         <div class="list-group-item list-group-item-action">
@@ -59,9 +59,21 @@ function showCategoriesList(array){
             </div>
         </div>
         `
-
+            }
         document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
     }
+}
+
+function sortAndShowCategories(sortCriteria, categoriesArray){
+    currentSortCriteria = sortCriteria;
+
+    if(categoriesArray != undefined){
+        currentCategoriesArray = categoriesArray;
+    }
+
+    currentCategoriesArray = sortCategories(currentSortCriteria, currentCategoriesArray);
+
+    showCategoriesList();
 }
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
@@ -70,17 +82,52 @@ function showCategoriesList(array){
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCTS_URL).then(function(resultObj){
         if (resultObj.status === "ok") {
-            categoriesArray = resultObj.data;
-            //Muestro las categorías ordenadas
-            showCategoriesList(categoriesArray);
+            sortAndShowCategories(ORDER_ASC_BY_PRICE, resultObj.data);
         }
     });
-});
 
-}
+    document.getElementById("sortAsc").addEventListener("click", function(){
+        sortAndShowCategories(ORDER_ASC_BY_PRICE);
+    });
 
+    document.getElementById("sortDesc").addEventListener("click", function(){
+        sortAndShowCategories(ORDER_DESC_BY_PRICE);
+    });
 
+    document.getElementById("sortByCount").addEventListener("click", function(){
+        sortAndShowCategories(ORDER_BY_PROD_SOLDCOUNT);
+    });
 
-    
+    document.getElementById("clearRangeFilter").addEventListener("click", function(){
+        document.getElementById("rangeFilterCountMin").value = "";
+        document.getElementById("rangeFilterCountMax").value = "";
 
-    
+        minCount = undefined;
+        maxCount = undefined;
+
+        showCategoriesList();
+    });
+
+    document.getElementById("rangeFilterCount").addEventListener("click", function(){
+        //Obtengo el mínimo y máximo de los intervalos para filtrar por cantidad
+        //de productos por categoría.
+        minCount = document.getElementById("rangeFilterCountMin").value;
+        maxCount = document.getElementById("rangeFilterCountMax").value;
+
+        if ((minCount != undefined) && (minCount != "") && (parseInt(minCount)) >= 0){
+            minCount = parseInt(minCount);
+        }
+        else{
+            minCount = undefined;
+        }
+
+        if ((maxCount != undefined) && (maxCount != "") && (parseInt(maxCount)) >= 0){
+            maxCount = parseInt(maxCount);
+        }
+        else{
+            maxCount = undefined;
+        }
+
+        showCategoriesList();
+    });
+})};
