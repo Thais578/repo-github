@@ -31,13 +31,13 @@
         <div class="row">
             <div class="col text-right">
                 <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-                    <label class="btn btn-light active" id="sortAsc" >
+                    <label class="btn btn-light active" id="priceAsc" >
                         <input type="radio" name="options" autocomplete="off" checked>Precio mayor - Precio menor
                     </label>
-                    <label class="btn btn-light" id="sortDesc" >
+                    <label class="btn btn-light" id="priceDesc" >
                         <input type="radio" name="options" autocomplete="off">Precio menor - Precio mayor
                     </label>
-                    <label class="btn btn-light" id="sortByCount" >
+                    <label class="btn btn-light" id="sortBySoldCount" >
                         <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Relevancia:
                     </label>
                 </div>
@@ -51,15 +51,15 @@
                   <p class="font-weight-normal text-right my-2">Precio:</p>
                 </div>
                 <div class="col">
-                  <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+                  <input class="form-control" type="number" placeholder="min." id="filterCountMin">
                 </div>
                 <div class="col">
-                  <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+                  <input class="form-control" type="number" placeholder="máx." id="filterCountMax">
                 </div>
                 <div class="col-3 p-0">
                   <div class="btn-group" role="group">
-                    <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
-                    <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+                    <button class="btn btn-light btn-block" id="priceFilterCount">Filtrar</button>
+                    <button class="btn btn-link btn-sm" id="clearPriceFilter">Limpiar</button>
                   </div>
                 </div>
               </div>
