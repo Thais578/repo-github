@@ -140,15 +140,29 @@ a.custom-card:hover {
   color: orange;
 }
 
+*{color: #fff}
 .form-signin {
   width: 100%;
   max-width: 330px;
-  padding: 15px;
+  padding: 50px 60px;
   margin: auto;
-  box-shadow: 5px 10px #dddada;
+  border: 0px solid #fff;
+  margin-top: 20;
+  -webkit-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+  -moz-box-shadow:-1px 4px 26px 11px rgba(0,0,0,0.75);
+  box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);;
+
+  
+}
+#fondo {
+background-image: url("image1.jpg");
+height: 100vh;
+width: 100%;
 }
 
-body {
-  background-image: url("image.jpg");
+#image {
+  display:block;
+  margin:auto;
 }
+
 
