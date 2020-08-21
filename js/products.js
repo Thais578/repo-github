@@ -1,6 +1,6 @@
-const ORDER_ASC_BY_PRICE = "PMPm";
-const ORDER_DESC_BY_PRICE= "PmPM";
-const ORDER_BY_PROD_SOLD_COUNT = "Cant.";
+const ORDER_ASC_BY_PRICE = "Precio mayor - Precio menor";
+const ORDER_DESC_BY_PRICE= "Precio menor - Precio mayor";
+const ORDER_BY_PROD_SOLD_COUNT = "Precio:";
 var currentCategoriesArray = [];
 var currentSortCriteria = undefined;
 var minCount = undefined;
