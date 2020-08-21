@@ -196,11 +196,11 @@ background-position:center;
 }
 
 #error {
-  border: 1px solid #F00; background: #FF6347;}
+  border: 0px solid #F00; background: #FF6347;}
   .errMsg { color: #C33; }
 
   #error2 {
-    border: 1px solid #F00; background: #FF6347;}
+    border: 0px solid #F00; background: #FF6347;}
     .errMsg { color: #C33; }
   
 
