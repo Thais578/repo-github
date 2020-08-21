@@ -7,7 +7,7 @@ console.log("inputUser:",inputUser)
     document.getElementById("error").innerHTML="Inserte nuevamente el usuario"
   
 }else if (inputPassword == null || inputPassword == "") {
-  document.getElementById("error").innerHTML="Inserte nuevamente la contraseña"
+  document.getElementById("error2").innerHTML="Inserte nuevamente la contraseña"
 }else{
 window.location.href="Página.html"
 }
