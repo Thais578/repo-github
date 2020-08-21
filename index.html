@@ -31,21 +31,22 @@
 </head>
 
 <body class="text-center" id="fondo">
-  <form class="form-signin">
-  <img class="mb-4" src="img/login.png" alt="" width="300" height="100" id="image">
+  <form class="form-signin"> 
+    <div class="col-md-12 text-center mb-5"></div>
+  <img class="mb-4" src="img/login.png" alt="" width="300" height="100">
 <h1 class="h3 mb-3 font-weight-normal">Iniciar sesión</h1>
 <label for="inputUser" class="only">Usuario:</label>
-<input type="user" id="inputUser" class="form-control" placeholder="Usuario" required>
+<input type="user" id="inputUser" class="form-control input-sm chat-input" placeholder="Usuario" required>
 <p></p>
 <label for="inputPassword" class="only">Contraseña:</label>
-<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+<input type="password" id="inputPassword" class="form-control input-sm chat-input" placeholder="Password" required>
 <p></p>
 <div class="checkbox mb-3">
   <label>
     <input type="checkbox" value="remember-me"> Recordarme
   </label>
 </div>
-<button class="btn btn-success btn-block" type="button" onclick="validar()">Ingresar</button>
+<button class="btn btn-light btn-block" type="button" onclick="validar()">Ingresar</button>
 <div id="error"></div>
 </form>
   <script src="js/init.js"></script>
