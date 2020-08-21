@@ -148,3 +148,7 @@ a.custom-card:hover {
   box-shadow: 5px 10px #dddada;
 }
 
+body {
+  background-image: url("image.jpg");
+}
+
