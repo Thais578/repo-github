@@ -10,7 +10,7 @@ console.log("inputUser:",inputUser)
 }else if (inputPassword == null || inputPassword == "") {
   document.getElementById("error2").innerHTML="Inserte nuevamente la contraseña"
 }else{
-  var inputUser = document.getElementById("inputUser").value;
+  var user = document.getElementById("inputUser").value;
   miStorage.setItem("keyUsuario",inputUser);
 window.location.href="Página.html"
 }
