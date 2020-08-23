@@ -41,7 +41,7 @@ var getJSONData = function(url){
 }
 function usuario() {
 if (sessionStorage.getItem("keyUsuario") == null)
-var nombredeusuario= sessionStorage.getItem("keyUsuario")
+var usuario= sessionStorage.getItem("keyUsuario")
 
 }
 //Función que se ejecuta una vez que se haya lanzado el evento de
