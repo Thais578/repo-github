@@ -41,11 +41,13 @@ var getJSONData = function(url){
 }
 function usuario() {
 if (sessionStorage.getItem("keyUsuario") == null)
-var usuario= sessionStorage.getItem("keyUsuario")
+var nombreusuario= sessionStorage.getItem("keyUsuario")
 
 }
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
+  usuario()
+  document.getElementById("inputUser").innerHTML= sessionStorage.getItem("keyUsuario")
 });
