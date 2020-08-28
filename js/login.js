@@ -1,7 +1,8 @@
+var miStorage= window.sessionStorage;
 function validar() {
 var inputUser= document.getElementById("inputUser").value;
 var inputPassword= document.getElementById("inputPassword").value;
-var miStorage= window.sessionStorage;
+  sessionStorage.setItem("keyUsuario",inputUser);
 console.log("inputPassword:",inputPassword)
 console.log("inputUser:",inputUser)
   if(inputUser == null || inputUser == "") {
@@ -9,12 +10,11 @@ console.log("inputUser:",inputUser)
   
 }else if (inputPassword == null || inputPassword == "") {
   document.getElementById("error2").innerHTML="Inserte nuevamente la contraseña"
-}else{
-  var user = document.getElementById("inputUser").value;
-  miStorage.setItem("keyUsuario",inputUser);
+}else{ 
 window.location.href="Página.html"
 }
 }
+
 
 
 

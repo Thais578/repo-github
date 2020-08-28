@@ -39,16 +39,16 @@ var getJSONData = function(url){
         return result;
     });
 }
-function usuario() {
-if (sessionStorage.getItem("keyUsuario") == null || sessionStorage.getItem("keyUsuario") == "")
-var keyUsuario= sessionStorage.getItem("keyUsuario")
+//function usuario() {
+//if (sessionStorage.getItem("keyUsuario") == null || sessionStorage.getItem("keyUsuario") == "")
+//var keyUsuario= sessionStorage.getItem("keyUsuario")
 
-}
+//}
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-  document.getElementById("keyUsuario").innerHTML=  document.getElementById("keyUsuario")
+  document.getElementById("keyUsuario").innerHTML=  miStorage.getItem("keyUsuario")
   
 });
 
