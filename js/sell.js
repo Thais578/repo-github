@@ -1,3 +1,9 @@
+document.addEventListener("DOMContentLoaded", function(e){
+    document.getElementById("keyUsuario1").innerHTML=  miStorage.getItem("keyUsuario")
+    
+  });
+  
+  
 let productCost = 0;
 let productCount = 0;
 let comissionPercentage = 0.13;

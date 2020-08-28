@@ -1,3 +1,8 @@
+document.addEventListener("DOMContentLoaded", function(e){
+    document.getElementById("keyUsuario2").innerHTML=  miStorage.getItem("keyUsuario")
+    
+  });
+  
 const ORDER_ASC_BY_COST = "Pm-PM";
 const ORDER_DESC_BY_COST = "PM-Pm";
 const ORDER_BY_PROD_SOLD = "Cant.vendidos";
