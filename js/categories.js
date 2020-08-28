@@ -6,13 +6,6 @@ var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
 
-document.addEventListener("DOMContentLoaded", function(e){
-    document.getElementById("keyUsuario5").innerHTML=  miStorage.getItem("keyUsuario")
-    
-  });
-  
-  
-
 function sortCategories(criteria, array){
     let result = [];
     if (criteria === ORDER_ASC_BY_NAME)
@@ -141,3 +134,8 @@ document.addEventListener("DOMContentLoaded", function(e){
         showCategoriesList();
     });
 });
+
+document.addEventListener("DOMContentLoaded", function(e){
+    document.getElementById("keyUsuario5").innerHTML=  miStorage.getItem("keyUsuario")
+    
+  });
