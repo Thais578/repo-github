@@ -11,7 +11,7 @@ console.log("inputUser:",inputUser)
 }else if (inputPassword == null || inputPassword == "") {
   document.getElementById("error2").innerHTML="Inserte nuevamente la contraseña"
 }else{ 
-window.location.href="Página.html"
+window.location.href="Pagina.html"
 }
 }
 
