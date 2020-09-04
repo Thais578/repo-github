@@ -62,7 +62,12 @@
         <dd>
           <p id="productRelatedProducts"></p>
         </dd>
-        
+
+        <dt>Comentarios</dt>
+        <dd>
+          <p id="comment"></p>
+        </dd>
+
         <dt>Imágenes ilustrativas</dt>
         <dd>
           <div class="row text-center text-lg-left pt-2" id="images">
@@ -70,6 +75,25 @@
         </dd>
       </dl>
     </div>
+    <form>
+    <p class="clasificacion">
+      <input id="radio1" type="radio" name="estrellas" value="5"><!--
+      --><label for="radio1">★</label><!--
+      --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+      --><label for="radio2">★</label><!--
+      --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+      --><label for="radio3">★</label><!--
+      --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+      --><label for="radio4">★</label><!--
+      --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+      --><label for="radio5">★</label>
+    </p>
+    <div>
+      <label for="inputComment" class="comments">Contraseña:</label>
+<input type="text" id="inputComment" class="btn-btn" placeholder="Comentario" required>
+<button class="btn" type="submit">Ingresar</button>
+    </div>
+    </form>
   </main>
   <footer class="text-muted">
     <div class="container">
@@ -88,13 +112,6 @@
     </div>
   </div>
   <div class="container p-5">
-    </div>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
     </div>
   </div>
   <script src="js/jquery-3.4.1.min.js"></script>
