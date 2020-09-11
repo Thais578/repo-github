@@ -90,12 +90,10 @@ document.addEventListener("DOMContentLoaded", function(e){
     function enviar() {
         var comentario= document.getElementById("inputComment").value;
         console.log("inputComment:",comentario)
-          if(comentario == comentario) {
+          if (comentario == null || comentario == "") {
+            document.getElementById("requerido").innerHTML="Inserte un comentario"
+
+          }else if(comentario == comentario) {
             document.getElementById("exito").innerHTML="El comentario ha sido enviado con exito"
-          
-        }
-            var comentario= document.getElementById("inputComment").value;
-         if (comentario == null || comentario == "") {
-            document.getElementById("requerido").innerHTML="Inserte nuevamente la contraseña"
           }
         }
