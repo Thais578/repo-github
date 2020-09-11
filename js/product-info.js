@@ -86,3 +86,14 @@ document.addEventListener("DOMContentLoaded", function(e){
             }
         });
     });
+
+    function enviar() {
+        var comentario= document.getElementById("inputComment").value;
+        console.log("inputComment:",comentario)
+          if(comentario == comentario) {
+            document.getElementById("exito").innerHTML="El comentario ha sido enviado con exito"
+          
+        }else { 
+          document.getElementById("requerido").innerHTML="Inserte un comentario"
+        }
+    }

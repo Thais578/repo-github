@@ -89,9 +89,11 @@
       --><label for="radio5">★</label>
     </p>
     <div>
-      <label for="inputComment" class="comments">Comentarios:</label>
+      <label for="inputComments" class="comments">Comentarios:</label>
 <input type="text" id="inputComment" class="btn-btn" placeholder="comentario" required>
-<button class="btn" type="submit">Enviar</button>
+<button class="btn"  onclick="enviar()" type="button">Enviar</button>
+<div id="exito"></div>
+<div id="requerido"></div>
     </div>
     </form>
   </main>
