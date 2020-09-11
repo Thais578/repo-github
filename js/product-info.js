@@ -93,7 +93,9 @@ document.addEventListener("DOMContentLoaded", function(e){
           if(comentario == comentario) {
             document.getElementById("exito").innerHTML="El comentario ha sido enviado con exito"
           
-        }else { 
-          document.getElementById("requerido").innerHTML="Inserte un comentario"
         }
-    }
+            var comentario= document.getElementById("inputComment").value;
+         if (comentario == null || comentario == "") {
+            document.getElementById("requerido").innerHTML="Inserte nuevamente la contraseña"
+          }
+        }
