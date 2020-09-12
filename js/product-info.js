@@ -99,12 +99,12 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
 
         function estrellitas() {
-            var estrellitas= document.getElementById("radio1").value;
-            console.log("radio1:",estrellitas)
-              if (estrellitas == null || estrellitas == "") {
-                document.getElementById("required").innerHTML="Inserte una puntuación"
-    
-              }else if(estrellitas == estrellitas) {
+              if (document.getElementById("radio1").checked || document.getElementById("radio2").checked ||
+              document.getElementById("radio3").checked || document.getElementById("radio4").checked || document.getElementById("radio5").checked)
+              {
                 document.getElementById("exito2").innerHTML="La puntuación ha sido enviado con exito"
+    
+              }else {
+                document.getElementById("required").innerHTML="Ingrese una puntuación"
               }
             }
