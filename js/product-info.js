@@ -97,3 +97,14 @@ document.addEventListener("DOMContentLoaded", function(e){
             document.getElementById("exito").innerHTML="El comentario ha sido enviado con exito"
           }
         }
+
+        function estrellitas() {
+            var estrellitas= document.getElementById("radio1").value;
+            console.log("radio1:",estrellitas)
+              if (estrellitas == null || estrellitas == "") {
+                document.getElementById("required").innerHTML="Inserte una puntuación"
+    
+              }else if(estrellitas == estrellitas) {
+                document.getElementById("exito2").innerHTML="La puntuación ha sido enviado con exito"
+              }
+            }
