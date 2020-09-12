@@ -239,5 +239,15 @@ background-position:center;
       color: orange;
     }
     
+    #requerido {
+      width: 400px;
+      border: 0px solid #F00; background: #FF6347;}
+      .errMsg { color: #C33;
+       }
+    
+      #required {
+        border: 0px solid #F00; background: #FF6347;}
+        .errMsg { color: #C33; }
+      
 
 
