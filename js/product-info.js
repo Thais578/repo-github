@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 });
 
 var comment = {};
-
 function comments(array){
 
     let htmlContentToAppend = "";
@@ -78,6 +77,8 @@ function comments(array){
         document.getElementById("comment").innerHTML = htmlContentToAppend;
     }
 }
+
+
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
