@@ -1,3 +1,9 @@
+document.addEventListener("DOMContentLoaded", function(e){
+    document.getElementById("keyUsuario8").innerHTML=  miStorage.getItem("keyUsuario")
+    
+  });
+
+
 var category = {};
 
 function showImagesGallery(array){

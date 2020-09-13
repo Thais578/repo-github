@@ -1,3 +1,8 @@
+document.addEventListener("DOMContentLoaded", function(e){
+  document.getElementById("keyUsuario7").innerHTML=  miStorage.getItem("keyUsuario")
+  
+});
+
 var product = {};
 
 function images(array){
@@ -108,3 +113,5 @@ document.addEventListener("DOMContentLoaded", function(e){
                 document.getElementById("required").innerHTML="Ingrese una puntuación"
               }
             }
+
+            
