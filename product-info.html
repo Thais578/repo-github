@@ -59,29 +59,25 @@
           <p id="productCost"></p>
         </dd>
 
-        <dt>Productos relacionados</dt>
+        
+        <dt>Imágenes ilustrativas</dt>
         <dd>
-          <p id="productRelatedProducts"></p>
+          <div class="row text-center text-lg-left pt-2" id="images">
+          </div>
         </dd>
 
         <dt>Comentarios</dt>
         <dd>
           <p id="comment"></p>
         </dd>
-
-        <dt>Imágenes ilustrativas</dt>
-        <dd>
-          <div class="row text-center text-lg-left pt-2" id="images">
-          </div>
-        </dd>
-      </dl>
-    </div>
+    <br></br>
     <form>
-      <label for="inputComments" class="comments">Comentarios:</label>
-<input type="text" id="inputComment" class="btn-btn" placeholder="comentario" required>
-<button class="btn btn-success green" onclick="enviar(); estrellitas();" type="button">Enviar</button>
+      <label for="inputComments" class="comments"><dt>Agregar comentarios:</dt></label>
+      <br>
+<input type="text" id="inputComment" class="pure-input-1-2" placeholder="comentario" required>
+<button class="btn btn-secondary" onclick="enviar(); estrellitas();" type="button">Enviar</button>
 <br></br>
-<div id="requerido"></div>
+<div  id="requerido"></div>
 <div id="exito"></div>
 <br></br>
 <p class="clasificacion" >
@@ -98,6 +94,8 @@
   <div id="required"></div>
 <div id="exito2"></div>
 </p>
+</dl>
+</div>
 <div>
     </div>
     </form>
@@ -128,3 +126,4 @@
 </body>
 
 </html>
+

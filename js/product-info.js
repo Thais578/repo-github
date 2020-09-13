@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             let productCategoryHTML = document.getElementById("productCategory");
             let productCurrencyHTML = document.getElementById("productCurrency");
             let productCostHTML = document.getElementById("productCost");
-            let productRelatedProductsHTML = document.getElementById("productRelatedProducts");
+            
             
         
             productNameHTML.innerHTML = product.name;
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             productCategoryHTML.innerHTML = product.category;
             productCurrencyHTML.innerHTML = product.currency;
             productCostHTML.innerHTML = product.cost;
-            productRelatedProductsHTML.innerHTML = product.relatedProducts;
+          
 
             //Muestro las imagenes en forma de galería
             images(product.images);
