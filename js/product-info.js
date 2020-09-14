@@ -114,22 +114,23 @@ document.addEventListener("DOMContentLoaded", function(e){
                 document.getElementById("required").innerHTML="Ingrese una puntuación"
               }
             }
-    function comment() {
-      document.getElementById("ff")
-    }
+            
+    //function newcomments() {
+      //document.getElementById("inputComment") }
+    
+    //function stars() {
+     // document.getElementById("star") }
+    
 
-    function stars() {
-      document.getElementById("")
-    }
-
-    function createNewcomment() {
-      var newcomment = {
-        score: stars(),
-        description: comment()
-      }
-      comment.push(newcomment)
-      document.getElementById("star").checked=true
-      document.getElementById("inputComment").value=""
-    }
+    //function createNewcomment() {
+     // var newcomment = {
+      //  score: stars(),
+       // description: comment()
+     // }
+      //comment.push(newcomment)
+      //comments(comment)
+      //document.getElementById("star").checked=true
+     // document.getElementById("inputComment").value=""}
+   
 
   
