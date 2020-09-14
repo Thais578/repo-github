@@ -114,5 +114,22 @@ document.addEventListener("DOMContentLoaded", function(e){
                 document.getElementById("required").innerHTML="Ingrese una puntuación"
               }
             }
+    function comment() {
+      document.getElementById("ff")
+    }
 
-           
+    function stars() {
+      document.getElementById("")
+    }
+
+    function createNewcomment() {
+      var newcomment = {
+        score: stars(),
+        description: comment()
+      }
+      comment.push(newcomment)
+      document.getElementById("star").checked=true
+      document.getElementById("inputComment").value=""
+    }
+
+  
