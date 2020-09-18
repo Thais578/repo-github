@@ -94,26 +94,23 @@ document.addEventListener("DOMContentLoaded", function(e){
     });
 
     function enviar() {
-        var comentario= document.getElementById("inputComment").value;
-          if (comentario == null || comentario == "") {
-            document.getElementById("requerido").innerHTML="Inserte un comentario"
-
-          }else if(comentario == comentario) {
-            document.getElementById("exito").innerHTML="El comentario ha sido enviado con exito"
-          }
-        }
-
-        function estrellitas() {
-              if (document.getElementById("radio1").checked == true || document.getElementById("radio2").checked == true ||
-              document.getElementById("radio3").checked == true || document.getElementById("radio4").checked == true|| document.getElementById("radio5").checked == true)
-              {
-                document.getElementById("exito2").innerHTML="La puntuación ha sido enviado con exito"
-    
-              }else {
-                document.getElementById("required").innerHTML="Ingrese una puntuación"
-              }
-            }
-            
+      var comentario= document.getElementById("inputComment").value;
+      var stars= (document.getElementById("radio1").value|| document.getElementById("radio2").value|| document.getElementById("radio3").value || document.getElementById("radio4").value)|| document.getElementById("radio5").value
+      
+        if (comentario == "") {
+          document.getElementById("requerido").innerHTML="Inserte un comentario"
+  
+        } if (stars == "") { 
+              document.getElementById("required").innerHTML="Ingrese una puntuación"
+  
+            }else{ 
+              document.getElementById("exito").innerHTML="El comentario ha sido enviado con exito"
+              document.getElementById("refresh").remove();
+          }};
+     
+  
+  
+      
     //function newcomments() {
       //document.getElementById("inputComment") }
     

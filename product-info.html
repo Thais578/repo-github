@@ -78,33 +78,51 @@
           <p id="comment"></p>
         </dd>
     <br></br>
-    <form>
+
+  <div id="refresh">
+  
+        <div class="collapse" id="collapseExample">
+        <div class="card card-body" >
+    
+      <form style="display: block; margin: 0 auto;">
+              
       <label for="inputComments" class="comments"><dt>Agregar comentarios:</dt></label>
-      <br>
-<input type="text" id="inputComment" class="pure-input-1-2" placeholder="comentario" required>
-<button class="btn btn-secondary" onclick="enviar(); estrellitas();" type="button">Enviar</button>
-<br></br>
-<div  id="requerido"></div>
-<div id="exito"></div>
-<br></br>
-<p class="clasificacion">
-  <input id="radio1" type="radio" name="estrellas" value="5"><!--
-  --><label for="radio1">★</label><!--
-  --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-  --><label for="radio2">★</label><!--
-  --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-  --><label for="radio3">★</label><!--
-  --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-  --><label for="radio4">★</label><!--
-  --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-  --><label for="radio5">★</label>
-  <div id="required"></div>
-<div id="exito2"></div>
-</p>
-</dl>
-</div>
-<div>
+              <br>
+        <input type="text" id="inputComment" class="pure-input-1-2" placeholder="comentario" required>
+        <p id="requerido"></p>
+        <br></br>
+
+        <p id="clasificacion"></p>
+          <input id="radio1" type="radio" name="estrellas" value="1"><!--
+          --><label for="radio1">★</label><!--
+          --><input id="radio2" type="radio" name="estrellas" value="2"><!--
+          --><label for="radio2">★</label><!--
+          --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+          --><label for="radio3">★</label><!--
+          --><input id="radio4" type="radio" name="estrellas" value="4"><!--
+          --><label for="radio4">★</label><!--
+          --><input id="radio5" type="radio" name="estrellas" value="5"><!--
+          --><label for="radio5">★</label>
+          
+          <div id="required"></div>
+          <br>
+          
+        <button class="btn btn-secondary" onclick="enviar();" type="button">Enviar</button>
+        </p>
+        </dl>
+        </div>
+        <div>
+            </form>
+            
+        </div>
+      </div>
+      
+        <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapseExample" 
+        aria-expanded="false" aria-controls="collapseExample" style="display: block; margin: 0 auto;">Ingresar un comentario </button>
+       </p>
     </div>
+  
+    <p id="exito"></p>
     </form>
   </main>
   <footer class="text-muted">
