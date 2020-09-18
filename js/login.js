@@ -3,8 +3,6 @@ function validar() {
 var inputUser= document.getElementById("inputUser").value;
 var inputPassword= document.getElementById("inputPassword").value;
   sessionStorage.setItem("keyUsuario",inputUser);
-console.log("inputPassword:",inputPassword)
-console.log("inputUser:",inputUser)
   if(inputUser == null || inputUser == "") {
     document.getElementById("error").innerHTML="Inserte nuevamente el usuario"
   
