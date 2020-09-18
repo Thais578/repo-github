@@ -97,20 +97,19 @@ document.addEventListener("DOMContentLoaded", function(e){
       var comentario= document.getElementById("inputComment").value;
       var stars= document.getElementById("radio1").checked
       
-        if (comentario == "") {
-          document.getElementById("requerido").innerHTML="Inserte un comentario"
-  
-        } if (stars == "" ) { 
-              document.getElementById("required").innerHTML="Ingrese una puntuación"
-              
-  
+      if (comentario == "") {
+        document.getElementById("requerido").innerHTML="Inserte un comentario"
+          
+        } else if (stars == "" || stars == false) { 
+          document.getElementById("required").innerHTML="Ingrese una puntuación"
+
             }else{ 
               document.getElementById("exito").innerHTML="El comentario ha sido enviado con exito"
               document.getElementById("refresh").remove();
-          }};
+          }
+        };
      
-  
-  
+          
       
     //function newcomments() {
       //document.getElementById("inputComment") }
