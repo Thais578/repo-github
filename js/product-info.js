@@ -95,7 +95,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 
     function enviar() {
         var comentario= document.getElementById("inputComment").value;
-        console.log("inputComment:",comentario)
           if (comentario == null || comentario == "") {
             document.getElementById("requerido").innerHTML="Inserte un comentario"
 
@@ -105,8 +104,8 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
 
         function estrellitas() {
-              if (document.getElementById("radio1").checked || document.getElementById("radio2").checked ||
-              document.getElementById("radio3").checked || document.getElementById("radio4").checked || document.getElementById("radio5").checked)
+              if (document.getElementById("radio1").checked == true || document.getElementById("radio2").checked == true ||
+              document.getElementById("radio3").checked == true || document.getElementById("radio4").checked == true|| document.getElementById("radio5").checked == true)
               {
                 document.getElementById("exito2").innerHTML="La puntuación ha sido enviado con exito"
     
