@@ -3,10 +3,6 @@ document.addEventListener("DOMContentLoaded", function(e){
     
   });
   
-  //function cerrarsesion() {
-    //document.getElementById("keyUsuario4").innerHTML=  miStorage.getItem("keyUsuario")
-    //sessionStorage.removeItem("keyUsuario")
-  //}
   
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
