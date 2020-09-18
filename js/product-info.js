@@ -95,13 +95,14 @@ document.addEventListener("DOMContentLoaded", function(e){
 
     function enviar() {
       var comentario= document.getElementById("inputComment").value;
-      var stars= (document.getElementById("radio1").value|| document.getElementById("radio2").value|| document.getElementById("radio3").value || document.getElementById("radio4").value)|| document.getElementById("radio5").value
+      var stars= document.getElementById("radio1").checked
       
         if (comentario == "") {
           document.getElementById("requerido").innerHTML="Inserte un comentario"
   
-        } if (stars == "") { 
+        } if (stars == "" ) { 
               document.getElementById("required").innerHTML="Ingrese una puntuación"
+              
   
             }else{ 
               document.getElementById("exito").innerHTML="El comentario ha sido enviado con exito"
