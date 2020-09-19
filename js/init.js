@@ -39,9 +39,6 @@ var getJSONData = function(url){
         return result;
     });
 }
-//function usuario() {
-//if (sessionStorage.getItem("keyUsuario") == null || sessionStorage.getItem("keyUsuario") == "")
-//var keyUsuario= sessionStorage.getItem("keyUsuario")
 
 //}
 //Función que se ejecuta una vez que se haya lanzado el evento de

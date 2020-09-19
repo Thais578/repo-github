@@ -197,3 +197,82 @@ document.addEventListener("DOMContentLoaded", function(e){
       stars = 1;
       estrellas();
   });
+
+
+
+  var getJSONData = function(url){
+    var result = {};
+    showSpinner();
+    return fetch(url)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }else{
+        throw Error(response.statusText);
+      }
+    })
+    .then(function(response) {
+          result.status = 'ok';
+          result.data = response;
+          hideSpinner();
+          return result;
+    })
+    .catch(function(error) {
+        result.status = 'error';
+        result.data = error;
+        hideSpinner();
+        return result;
+    });
+}
+  //Función que se ejecuta una vez que se haya lanzado el evento de
+//que el documento se encuentra cargado, es decir, se encuentran todos los
+//elementos HTML presentes.
+getJSONData(PRODUCTS_URL).then(function(resultProd) {
+    if (resultProd.status === "ok") {
+ let Pro = resultProd.data
+        console.log(Pro);
+        relatedProducts(Pro);
+    }
+});
+
+function relatedProducts(O1) {
+    let producto1 = 
+    `
+    <a href="product-info.html" div class="list-group-item list-group-item-action">
+    <div class="row">
+            <div class="col-3">
+                <img src="` + O1[1].imgSrc + `" alt="` + O1[1].description + `" class="img-thumbnail">
+            </div>
+            <div class="col">
+                <div class="d-flex w-100 justify-content-between">
+                    <h4 class="mb-1">`+ O1[1].name +`</h4>
+                    <small class="text-muted">Costo:`+ O1[1].currency + ``+ O1[1].cost + `</br>Vendidos:` + O1[1].soldCount + ` </small>
+                </div>
+                <div> `+ O1[1].description + ` </div>
+
+            </div>
+        </div>
+    </div>
+    `
+    document.getElementById('rp1').innerHTML = producto1;
+    let producto2 = 
+    `
+    <a href="product-info.html" div class="list-group-item list-group-item-action">
+    <div class="row">
+            <div class="col-3">
+                <img src="` + O1[3].imgSrc + `" alt="` + O1[3].description + `" class="img-thumbnail">
+            </div>
+            <div class="col">
+                <div class="d-flex w-100 justify-content-between">
+                    <h4 class="mb-1">`+ O1[3].name +`</h4>
+                    <small class="text-muted">Costo:`+ O1[3].currency + ``+ O1[3].cost + `</br>Vendidos:` + O1[3].soldCount + ` </small>
+                </div>
+                <div> `+ O1[3].description + ` </div>
+
+            </div>
+        </div>
+    </div>
+    `
+    document.getElementById('rp2').innerHTML = producto2;
+}
+
