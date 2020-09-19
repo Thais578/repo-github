@@ -5,26 +5,6 @@ document.addEventListener("DOMContentLoaded", function(e){
   
 });
 
-var product = {};
-
-function images(array){
-
-    let htmlContentToAppend = "";
-
-    for(let i = 0; i < array.length; i++){
-        let images = array[i];
-
-        htmlContentToAppend += `
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="` + images + `" alt="">
-            </div>
-        </div>
-        `
-
-        document.getElementById("images").innerHTML = htmlContentToAppend;
-    }
-}
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
@@ -52,8 +32,6 @@ document.addEventListener("DOMContentLoaded", function(e){
             productCostHTML.innerHTML = product.cost;
           
 
-            //Muestro las imagenes en forma de galería
-            images(product.images);
         }
     });
 });
@@ -71,7 +49,7 @@ function comments(array){
         <br>
         Puntuación: `+ comment.score + `<br>
         ` + comment.description + ` <br>
-        <small class="texted-muted"> Usuario: ` + comment.user + '' + comment.dateTime + `</small>
+        <small class="texted-muted"> Usuario: ` + comment.user + ' ' + comment.dateTime + `</small>
         <br> <br>
         <div>
         `
@@ -119,20 +97,24 @@ document.addEventListener("DOMContentLoaded", function(e){
   }
     
     function agregarComentario(){
+        var fecha = new Date();
+        var date = fecha.getFullYear() + '-' + fecha.getMonth() + '-' + fecha.getDate() + ' ' + fecha.getHours() + ':' + fecha.getMinutes() + ':' + fecha.getSeconds();
         let htmlContentToAppend = "";
         htmlContentToAppend = `
             <div>
             <br>
             Puntuación: `+ stars + `<br>
             ` + comentario + ` <br>
-            <small class="texted-muted"> Usuario: ` + miStorage.getItem("keyUsuario") + `</small>
+            <small class="texted-muted"> Usuario: ` + miStorage.getItem("keyUsuario") + `  
+            
+            ` + date + `</small>
             <br> <br>
             <div>
             `
     
             //'' + comment.dateTime +
         document.getElementById("comment").innerHTML += htmlContentToAppend;
-        stars = undefined;
+        stars = 0; estrellas()
         document.getElementById("inputComment").value = ""; 
     }
     
