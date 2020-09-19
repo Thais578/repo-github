@@ -183,8 +183,6 @@ document.addEventListener("DOMContentLoaded", function(e){
   
   document.getElementById('radio3').addEventListener("click", function() {
       stars = 3;
-      alert("clickestrellas")
-      alert(stars);
       estrellas();
   });
   
@@ -230,7 +228,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 getJSONData(PRODUCTS_URL).then(function(resultProd) {
     if (resultProd.status === "ok") {
  let Pro = resultProd.data
-        console.log(Pro);
         relatedProducts(Pro);
     }
 });
