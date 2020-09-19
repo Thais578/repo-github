@@ -93,40 +93,123 @@ document.addEventListener("DOMContentLoaded", function(e){
         });
     });
 
-    function enviar() {
-      var comentario= document.getElementById("inputComment").value;
-      var stars= document.getElementById("radio1").checked
-      
-      if (comentario == "") {
-        document.getElementById("requerido").innerHTML="Inserte un comentario"
-          
-        } else if (stars == "" || stars == false) { 
-          document.getElementById("required").innerHTML="Ingrese una puntuación"
-
-            }else{ 
-              document.getElementById("exito").innerHTML="El comentario ha sido enviado con exito"
-              document.getElementById("refresh").remove();
-          }
-        };
-     
-          
-      
-    //function newcomments() {
-      //document.getElementById("inputComment") }
     
-    //function stars() {
-     // document.getElementById("star") }
     
-
-    //function createNewcomment() {
-     // var newcomment = {
-      //  score: stars(),
-       // description: comment()
-     // }
-      //comment.push(newcomment)
-      //comments(comment)
-      //document.getElementById("star").checked=true
-     // document.getElementById("inputComment").value=""}
-   
-
+    function enviar(){
+      comentario = document.getElementById("inputComment").value; 
   
+      if (stars == null && comentario == ""){
+          document.getElementById("requerido").innerHTML="Inserte un comentario";
+          document.getElementById("required").innerHTML="Ingrese una puntuación";
+      } else {
+          if (stars == null){
+              document.getElementById("required").innerHTML="Ingrese una puntuación";
+          } else {
+              if (comentario == ""){
+                  document.getElementById("requerido").innerHTML="Inserte un comentario";
+              } else {
+                  document.getElementById("required").innerHTML="";
+                  document.getElementById("requerido").innerHTML="";
+                  agregarComentario();
+              }
+          }
+      }
+  }
+    
+    function agregarComentario(){
+        let htmlContentToAppend = "";
+        htmlContentToAppend = `
+            <div>
+            <br>
+            Puntuación: `+ stars + `<br>
+            ` + comentario + ` <br>
+            <small class="texted-muted"> Usuario: ` + miStorage.getItem("keyUsuario") + `</small>
+            <br> <br>
+            <div>
+            `
+    
+            //'' + comment.dateTime +
+        document.getElementById("comment").innerHTML += htmlContentToAppend;
+        stars = undefined;
+        document.getElementById("inputComment").value = ""; 
+    }
+    
+    function estrellas(){
+      document.getElementById("required").innerHTML="";
+        if (stars == 1){
+            document.getElementById('radio1').checked = true;
+            document.getElementById('radio2').checked = false;
+            document.getElementById('radio3').checked = false;
+            document.getElementById('radio4').checked = false;
+            document.getElementById('radio5').checked = false;
+        } else {
+          document.getElementById("required").innerHTML="";
+            if (stars == 2){
+                document.getElementById('radio1').checked = true;
+                document.getElementById('radio2').checked = true;
+                document.getElementById('radio3').checked = false;
+                document.getElementById('radio4').checked = false;
+                document.getElementById('radio5').checked = false;
+            } else {
+              document.getElementById("required").innerHTML="";
+                if (stars == 3){
+                    document.getElementById('radio1').checked = true;
+                    document.getElementById('radio2').checked = true;
+                    document.getElementById('radio3').checked = true;
+                    document.getElementById('radio4').checked = false;
+                    document.getElementById('radio5').checked = false;
+                } else {
+                  document.getElementById("required").innerHTML="";
+                    if (stars == 4){
+                        document.getElementById('radio1').checked = true;
+                        document.getElementById('radio2').checked = true;
+                        document.getElementById('radio3').checked = true;
+                        document.getElementById('radio4').checked = true;
+                        document.getElementById('radio5').checked = false;
+                    } else {
+                      document.getElementById("required").innerHTML="";
+                        if (stars == 5){
+                            document.getElementById('radio1').checked = true;
+                            document.getElementById('radio2').checked = true;
+                            document.getElementById('radio3').checked = true;
+                            document.getElementById('radio4').checked = true;
+                            document.getElementById('radio5').checked = true;
+                        } else {
+                            document.getElementById('radio1').checked = false;
+                            document.getElementById('radio2').checked = false;
+                            document.getElementById('radio3').checked = false;
+                            document.getElementById('radio4').checked = false;
+                            document.getElementById('radio5').checked = false;
+                        }
+                    }
+                }
+            }
+        }
+    } 
+    
+    document.getElementById('radio1').addEventListener("click", function() {
+      stars = 5;
+      estrellas();
+  });
+  
+  document.getElementById('radio2').addEventListener("click", function() {
+      stars = 4;
+      estrellas();
+  });
+  
+  document.getElementById('radio3').addEventListener("click", function() {
+      stars = 3;
+      alert("clickestrellas")
+      alert(stars);
+      estrellas();
+  });
+  
+  document.getElementById('radio4').addEventListener("click", function() {
+      stars = 2;
+      estrellas();
+  });
+  
+  document.getElementById('radio5').addEventListener("click", function() {
+      stars = 1;
+      estrellas();
+  });
