@@ -1,3 +1,5 @@
+var stars= null;
+
 document.addEventListener("DOMContentLoaded", function(e){
   document.getElementById("keyUsuario7").innerHTML=  miStorage.getItem("keyUsuario")
   
