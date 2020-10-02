@@ -16,12 +16,15 @@ document.addEventListener("DOMContentLoaded", function(e){
     <div class="container">
     <div class="row">
             <div class="col-3">
-                <img src="` + articles.src + `" alt="` + "" + `" class="img-thumbnail">
+                <img src="` + articles.src + `" alt="` + "" + `" class="img-thumbnail w-50">
             </div>
             <div class="col">
                 <div class="d-flex w-100 justify-content-between">
-                    <h4 class="mb-1">`+ articles.name +`</h4>
-                    <small class="text-muted">Moneda:`+ articles.currency + ``+ articles.unitCost + `</br>Cantidad:` + articles.count + ` </small>
+                    <h4 class="mb-1">`+ articles.name +`</h4> 
+                    <small class="text-muted">Artículos:`+ articles.count +` </small>
+                    </div>
+                    <div> Moneda:`+" "+ articles.currency +" "+ ``+ articles.unitCost + ` </div>
+                    <div>
                 </div>
             </div>
         </div>
