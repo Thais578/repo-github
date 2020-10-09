@@ -21,7 +21,8 @@ document.addEventListener("DOMContentLoaded", function(e){
             <div class="col">
                 <div class="d-flex w-100 justify-content-between">
                     <h4 class="mb-1">`+ articles.name +`</h4> 
-                    <small class="text-muted">Artículos:`+ articles.count +` </small>
+                    <input type="text" style="width:50px;height:30px" id="fname" name="fname">
+                    <label for="fname"></label>
                     </div>
                     <div> Moneda:`+" "+ articles.currency +" "+ ``+ articles.unitCost + ` </div>
                     <div>
