@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function(e){
                 <div class="d-flex w-100 justify-content-between">
                     <h4 class="mb-1">`+ articles.name +`</h4>
                      </div>
-                     <select name="select" onchange="subTotal(this.value)">
+                     <select name="select" id="cant" onchange="subTotal(this.value)">
                      <option value="value1">1</option> 
                     <option value ="2">`+ articles.count+`</option>  
                     <option value="value3">3</option>
@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", function(e){
                     </select>
                     <div> Moneda:`+" "+ articles.currency +" "+ ` </div>
                     <div id="costo"> `+ articles.unitCost + ` </div>
+                    <label for="inputCuenta" class="only">Subtotal</label>
+<input type="cuenta" id="inputCuenta" class="btn btn-light" onclick="">
                     <div>
                 </div>
             </div>
@@ -42,10 +44,10 @@ document.addEventListener("DOMContentLoaded", function(e){
     }
     
     function subTotal() {
-        var cantidad= document.getElementById("select").value
-        var costo= document.getElementById("costo").value
+        let cantidad= document.getElementById("cant").value;
+        let costo= document.getElementById("costo").innerHTML;
         var cuenta = cantidad * costo;
-        
+        console.log(cuenta)
     }
     
  
