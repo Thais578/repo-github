@@ -30,8 +30,6 @@ document.addEventListener("DOMContentLoaded", function(e){
                     </select>
                     <div> Moneda:`+" "+ articles.currency +" "+ ` </div>
                     <div id="costo"> `+ articles.unitCost + ` </div>
-                    <label for="inputCuenta" class="only">Subtotal</label>
-<input type="cuenta" id="inputCuenta" class="btn btn-light" onclick="">
                     <div>
                 </div>
             </div>
@@ -48,8 +46,9 @@ document.addEventListener("DOMContentLoaded", function(e){
         let costo= document.getElementById("costo").innerHTML;
         var cuenta = cantidad * costo;
         console.log(cuenta)
+        
     }
-    
+   
  
 
     
