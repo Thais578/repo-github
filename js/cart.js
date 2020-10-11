@@ -44,9 +44,9 @@ document.addEventListener("DOMContentLoaded", function(e){
                <option value ="2">`+ articles.count+`</option>  
                <option value="3">3</option></td>
                 
-                <td class="text-right">  <div id="costo"> `+ articles.unitCost + ` </div></td>
-                <td class="text-right">   <div> `+ articles.currency +" "+ `  </div></td>
-                <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                <td class="text-center">  <div id="costo"> `+ articles.unitCost + ` </div></td>
+                <td class="text-center">   <div> `+ articles.currency +" "+ `  </div></td>
+                <td class="text-center"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
                
             </tr>
 
