@@ -83,13 +83,30 @@ document.addEventListener("DOMContentLoaded", function(e){
 <div class="col mb-2">
 <div class="row">
 <div class="col-sm-12 col-md-6 text-right">
-  <button class="btn btn-secondary btn-sm">Comprar</button>
 </div>
 </div>
 </div>
 </div>
 </div>
-<hr class="mb-4">
+<div class"container">
+<div class="col-sm-12 col-md-6 text-left">
+<p>Tipo de envío:</p>
+<div class="custom-control custom-radio">
+<input id="goldradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
+<label class="custom-control-label" for="goldradio">Premium (2-5 días)</label>
+</div>
+<div class="custom-control custom-radio">
+                  <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" required="">
+                  <label class="custom-control-label" for="premiumradio">Express (5-8 días)</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
+                  <label class="custom-control-label" for="standardradio">Standard (12 a 15 días)</label>
+                </div>
+</div>
+</div>
+<br>
+<button class="btn btn-secondary btn-sm">Comprar</button>
 
     `
     
