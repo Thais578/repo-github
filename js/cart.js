@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
         htmlContentToAppend += `
     
-    <div class="container">
+    <div class="container" class="text-center">
     <thead>
     <div class="container mb-4">
       <div class="row">
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             <tbody>
             <tr>
                 <td> <img src="` + articles.src + `" alt="` + "" + `" class="img-thumbnail w-50"></td>
-                <td> <div class="d-flex w-100 justify-content-between"> <h4 class="mb-1">`+ articles.name +`</h4></td>
+                <td> <div class="d-flex w-100 justify-content-between"> <h6 class="mb-1">`+ articles.name +`</h6></td>
                 <td><select name="select" id="cant" onchange="subTotal(this.value)">
                 <option value="1">1</option> 
                <option value ="2">`+ articles.count+`</option>  
@@ -90,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 </div>
 <div class"container">
 <div class="col-sm-12 col-md-6 text-left">
+<hr class="mb-4">
 <p>Tipo de envío:</p>
 <div class="custom-control custom-radio">
 <input id="goldradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
@@ -105,6 +106,24 @@ document.addEventListener("DOMContentLoaded", function(e){
                 </div>
 </div>
 </div>
+
+<div class"container">
+<div class="col-sm-12 col-md-6 text-left">
+<hr class="mb-4">
+<p>Forma de pago:</p>
+<div class="custom-control custom-radio">
+<input id="goldradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
+<label class="custom-control-label" for="goldradio"> Tarjeta de crédito </label>
+</div>
+<div class="custom-control custom-radio">
+                  <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" required="">
+                  <label class="custom-control-label" for="premiumradio">Transferencia bancaria</label>
+                </div>
+               
+</div>
+</div>
+
+
 <br>
 <button class="btn btn-secondary btn-sm">Comprar</button>
 
