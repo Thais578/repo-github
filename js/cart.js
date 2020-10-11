@@ -64,9 +64,18 @@ document.addEventListener("DOMContentLoaded", function(e){
           <td></td>
           <td></td>
           <td></td>
-          <td><strong>Total</strong></td>
-          <td class="text-right"><strong></strong></td>
+          <td>Costo de envío</td>
+          <td class="text-right"></td>
       </tr>
+
+      <tr>	
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><strong>Total</strong></td>
+      <td class="text-right"><strong></strong></td>
+  </tr>
   </tbody>
 </table>
 </div>
@@ -80,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 </div>
 </div>
 </div>
+<hr class="mb-4">
 
     `
     
