@@ -64,9 +64,106 @@ document.addEventListener("DOMContentLoaded", function(e){
           <td></td>
           <td></td>
           <td></td>
-          <td>Costo de envío</td>
+          <td>
+          <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
+ Tipo de envío
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tipo de envío</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class"container">
+      <div class="col-sm-12 col-md-6 text-left">
+      <div class="custom-control custom-radio">
+      <input id="goldradio" name="pago" type="radio" class="custom-control-input" value="1" checked="" required="">
+      <label class="custom-control-label" for="goldradio">Premium (2-5 días)</label>
+      </div>
+      <div class="custom-control custom-radio">
+                        <input id="premiumradio" name="pago" type="radio" value="2"class="custom-control-input" required="">
+                        <label class="custom-control-label" for="premiumradio">Express (5-8 días)</label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input id="standardradio" name="pago" value="3" type="radio" class="custom-control-input" required="">
+                        <label class="custom-control-label" for="standardradio">Standard (12 a 15 días)</label>
+                      </div>
+      </div>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+          </td>
           <td class="text-right"></td>
       </tr>
+      <tr>	
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Costo de envío</td>
+      <td class="text-right"></td>
+  </tr>
+  
+      <tr>	
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#staticBackdrop">
+        Forma de pago
+      </button>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            <div class"container">
+      <div class="col-sm-12 col-md-6 text-left">
+            <div class="custom-control custom-radio">
+            
+      <div class="custom-control custom-radio">
+                  <input id="goldradio" name="pago" type="radio" class="custom-control-input" checked="" required="">
+                  <label class="custom-control-label" for="goldradio">Trasferencia bancaria</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input id="premiumradio" name="pago" type="radio" class="custom-control-input" required="">
+                  <label class="custom-control-label" for="premiumradio">Tarjeta de crédito</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Understood</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </td>
+      <td class="text-right"></td>
+  </tr>
+      
+
 
       <tr>	
       <td></td>
@@ -88,43 +185,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 </div>
 </div>
 </div>
-<div class"container">
-<div class="col-sm-12 col-md-6 text-left">
-<hr class="mb-4">
-<p>Tipo de envío:</p>
-<div class="custom-control custom-radio">
-<input id="goldradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
-<label class="custom-control-label" for="goldradio">Premium (2-5 días)</label>
-</div>
-<div class="custom-control custom-radio">
-                  <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" required="">
-                  <label class="custom-control-label" for="premiumradio">Express (5-8 días)</label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
-                  <label class="custom-control-label" for="standardradio">Standard (12 a 15 días)</label>
-                </div>
-</div>
-</div>
 
-<div class"container">
-<div class="col-sm-12 col-md-6 text-left">
-<hr class="mb-4">
-<p>Forma de pago:</p>
-<div class="custom-control custom-radio">
-<input id="goldradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
-<label class="custom-control-label" for="goldradio"> Tarjeta de crédito </label>
-</div>
-<div class="custom-control custom-radio">
-                  <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" required="">
-                  <label class="custom-control-label" for="premiumradio">Transferencia bancaria</label>
-                </div>
-               
-</div>
-</div>
-
-
-<br>
 <button class="btn btn-secondary btn-sm">Comprar</button>
 
     `
@@ -141,8 +202,25 @@ document.addEventListener("DOMContentLoaded", function(e){
         
     };
    
- 
-
+   
+    function validarTipoEnvio() {
+      var envio= document.getElementsByName("tEnvio");
+      var validarEnvio = false;
+      i= 0
+      while(!validarEnvio && i < envio.length) {
+        if(envio[i].checked) {
+          validarEnvio = true
+      }
+      i++;
+    }
+    if(validarEnvio) {
+      document.getElementById("errorEnvio").innerHTML = "Debes seleccionar un tipo de envío";
+      return validarEnvio;
+    } else{
+      document.getElementById("errorEnvio").innerHTML = "";
+      $('#extraLargeModal').modal('show');
+      return validarEnvio;
+    }}
     
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
