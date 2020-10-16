@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 </div>
 
 <button class="btn btn-secondary btn-sm">Comprar</button>
-
+<div id="errorEnvio"></div>
 
     `
     
