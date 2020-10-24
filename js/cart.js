@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     function total() {
       let cantidad= document.getElementById("cant").value;
       let costo= document.getElementById("costo").innerHTML;
-      let costoEnvio= document.getElementById("goldradio").innerHTML
+      let costoEnvio= document.getElementById("goldradio").innerHTML = parseInt(0,35)
       var cuenta2 = cantidad * costo * costoEnvio;
    document.getElementById("resultado2").innerHTML = cuenta2;
       
