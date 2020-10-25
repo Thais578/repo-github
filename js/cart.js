@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     function total2() {
       let cantidad= document.getElementById("cant").value;
       let costo= document.getElementById("costo").innerHTML;
-      let costoEnvio= document.getElementsByClassName("tEnvio2").innerHTML= ((0.07)* cantidad * costo)
+      let costoEnvio= document.getElementsByName("tEnvio2").innerHTML= ((0.07)* cantidad * costo)
       var cuenta2 = cantidad * costo + costoEnvio;
    document.getElementById("resultado2").innerHTML = cuenta2;
       
@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function(e){
   function total() {
     let cantidad= document.getElementById("cant").value;
     let costo= document.getElementById("costo").innerHTML;
-    let costoEnvio= document.getElementsByClassName("tEnvio").innerHTML= ((0.15)* cantidad * costo)
+    let costoEnvio= document.getElementsByName("tEnvio").innerHTML= ((0.15)* cantidad * costo)
     var cuenta2 = cantidad * costo + costoEnvio;
  document.getElementById("resultado2").innerHTML = cuenta2;
     
@@ -236,7 +236,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 function total3() {
   let cantidad= document.getElementById("cant").value;
   let costo= document.getElementById("costo").innerHTML;
-  let costoEnvio= document.getElementsByClassName("tEnvio3").innerHTML= ((0.05)* cantidad * costo)
+  let costoEnvio= document.getElementsByName("tEnvio3").innerHTML= ((0.05)* cantidad * costo)
   var cuenta2 = cantidad * costo + costoEnvio;
 document.getElementById("resultado2").innerHTML = cuenta2;
   
@@ -244,7 +244,7 @@ document.getElementById("resultado2").innerHTML = cuenta2;
 function cEnvio() {
   let cantidad= document.getElementById("cant").value;
     let costo= document.getElementById("costo").innerHTML;
-    let costoEnvio= document.getElementsByClassName("tEnvio").innerHTML= ((0.15)* cantidad * costo)
+    let costoEnvio= document.getElementsByName("tEnvio").innerHTML= ((0.15)* cantidad * costo)
     var cuenta3 = costoEnvio;
  document.getElementById("resultado3").innerHTML = cuenta3;
 
@@ -252,7 +252,7 @@ function cEnvio() {
 function cEnvio2() {
   let cantidad= document.getElementById("cant").value;
     let costo= document.getElementById("costo").innerHTML;
-    let costoEnvio= document.getElementsByClassName("tEnvio").innerHTML= ((0.07)* cantidad * costo)
+    let costoEnvio= document.getElementsByName("tEnvio").innerHTML= ((0.07)* cantidad * costo)
     var cuenta3 = costoEnvio;
  document.getElementById("resultado3").innerHTML = cuenta3;
 
@@ -260,7 +260,7 @@ function cEnvio2() {
 function cEnvio3() {
   let cantidad= document.getElementById("cant").value;
     let costo= document.getElementById("costo").innerHTML;
-    let costoEnvio= document.getElementsByClassName("tEnvio").innerHTML= ((0.05)* cantidad * costo)
+    let costoEnvio= document.getElementsByName("tEnvio").innerHTML= ((0.05)* cantidad * costo)
     var cuenta3 = costoEnvio;
  document.getElementById("resultado3").innerHTML = cuenta3;
 
@@ -278,7 +278,7 @@ function cEnvio3() {
       }
       i++;
     }
-    if(validarEnvio) {
+    if(inputUser == null || inputUser == "") {
       document.getElementById("errorEnvio").innerHTML = "Debes seleccionar un tipo de envío";
       return validarEnvio;
     } else{
