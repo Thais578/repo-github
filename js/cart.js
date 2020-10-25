@@ -40,16 +40,17 @@ document.addEventListener("DOMContentLoaded", function(e){
                 <td> <img src="` + articles.src + `" alt="` + "" + `" class="img-thumbnail w-50"></td>
                 <td> <div class="d-flex w-100 justify-content-between"> <h6 class="mb-1">`+ articles.name +`</h6></td>
                 <td><select name="select" id="cant" onchange="subTotal(this.value)">
+                <option value="0">...</option>
                 <option value="1">1</option> 
                <option value ="2">`+ articles.count+`</option>  
                <option value="3">3</option></td>
-               </select>
-                
+               </select>  
                 <td class="text-center">  <div id="costo"> `+ articles.unitCost + ` </div></td>
                 <td class="text-center">   <div> `+ articles.currency +" "+ `  </div></td>
                 <td class="text-center"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
                
             </tr>
+            
 
           <tr>
           <td></td>
@@ -58,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function(e){
           <td></td>
           <td>Sub-Total</td>
           <td class="text-right"> <div id="resultado"></div></td>
+          
       </tr>
       
       <tr>	
@@ -102,21 +104,89 @@ document.addEventListener("DOMContentLoaded", function(e){
       </div>
       <div class="modal-body">
       <div class="container">
-      <div class="col-sm-12 col-md-6 text-left">
-      <div class="custom-control custom-radio">
-                        <input id="transferencia" name="pago" type="radio" value="2"class="custom-control-input" required="">
-                        <label class="custom-control-label" for="transferencia">Transferencia</label>
-                      </div>
-                      <div class="custom-control custom-radio">
-                        <input id="tarjeta" name="pago" value="3" type="radio" class="custom-control-input" required="">
-                        <label class="custom-control-label" for="tarjeta">Tarjeta</label>
-                      </div>
+      <p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Tarjeta de crédito</a>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Transferencia bancaria</button>
+  
+</p>
+<div class="row">
+  <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample1">
+      <div class="card card-body">
+       <div class="container"
+       <form class="credit-card">
+  <div class="form-header">
+    <h4 class="title">Detalles</h4>
+  </div>
+ 
+  <div class="form-body">
+    <!-- Card Number -->
+    <input type="text" class="card-number" placeholder="Número de tarjeta">
+ 
+    <!-- Date Field -->
+    <div class="date-field">
+      <div class="month">
+         <select name="Month">
+        <option value=0>Mes</option>
+          <option value="january">January</option>
+          <option value="february">February</option>
+          <option value="march">March</option>
+          <option value="april">April</option>
+          <option value="may">May</option>
+          <option value="june">June</option>
+          <option value="july">July</option>
+          <option value="august">August</option>
+          <option value="september">September</option>
+          <option value="october">October</option>
+          <option value="november">November</option>
+          <option value="december">December</option>
+        </select>
+      </div>
+      <div class="year">
+        <select name="Year">
+        <option value="0">Año</option>
+          <option value="2016">2016</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+          <option value="2024">2024</option>
+        </select>
+      </div>
+    </div>
+ 
+    <!-- Card Verification Field -->
+    <div class="card-verification">
+      <div class="cvv-input">
+        <input type="text" placeholder="CVV">
+      </div>
+
+    </div>
+  </div>
+</form>
+
+       </div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample2">
+      <div class="card card-body">
+      <input type="text" class="card-number" placeholder="Banco">
+      <input type="text" class="card-number" placeholder="Número de cuenta">
+      </div>
+    </div>
+  </div>
+</div>
       </div>
       </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary">Guardar cambios</button>
       </div>
     </div>
   </div>
@@ -148,7 +218,11 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 <div class"container">
       <div class="col-sm-12 col-md-6 text-left">
+      <h4>Método de envío</h4>
       <p>Dirección: <input type="text" name="nombre" id="direccion"></p> <div id="errorDireccion"></div>
+      <p>Calle: <input type="text" name="nombre" id="calle"></p> <div id="errorCalle"></div>
+      <p>Número: <input type="text" name="nombre" id="numero"></p> <div id="errorNumero"></div>
+      <p>Esquina: <input type="text" name="nombre" id="esquina"></p> <div id="errorEsquina"></div>
       <p>País: <select id="pais"></p>
   <option value="0">...</option>
   <option value="1">Uruguay</option>
@@ -181,7 +255,8 @@ document.addEventListener("DOMContentLoaded", function(e){
 </div>
 
 
-<button class="btn btn-secondary btn-sm" onclick="validarTipoEnvio();validarDireccion();validarTipoEnvio2();validarTipoEnvio3();validarPais();">Comprar</button>
+<button class="btn btn-secondary btn-sm" onclick="validarTipoEnvio();validarDireccion();validarTipoEnvio2();validarTipoEnvio3();validarPais();validarCantidad();validarCalle();validarNumero();validarEsquina();">Comprar</button>
+<div id="errorCantidad"></div>
 
 
 
@@ -302,7 +377,7 @@ function cEnvio3() {
 function validarPais() {
     var pais=document.getElementById("pais")
     if(pais.value==0 ||pais.value == "") {
-    document.getElementById("errorPais"). innerHTML= "Ingresa un pais";
+    document.getElementById("errorPais").innerHTML= "Ingresa un pais";
         return false;
 
       }else{
@@ -310,7 +385,48 @@ function validarPais() {
         return true
       }}
     
+      function validarCantidad() {
+        var cantidad =document.getElementById("cant")
+        if(cantidad.value==0 ||cantidad.value == "") {
+        document.getElementById("errorCantidad").innerHTML= "Ingresa una cantidad";
+            return false;
     
+          }else{
+            document.getElementById("errorCantidad").style.display= "none";
+            return true
+          }}
+          function validarCalle() {
+            var calle= document.getElementById("calle").value
+            if(calle=="") {
+              document.getElementById("errorCalle"). innerHTML= "Ingresa una calle";
+              return false;
+            }else{
+              document.getElementById("errorCalle").style.display= "none";
+              return true
+            }
+          }
+
+          function validarNumero() {
+            var numero= document.getElementById("numero").value
+            if(numero=="") {
+              document.getElementById("errorNumero"). innerHTML= "Ingresa un número";
+              return false;
+            }else{
+              document.getElementById("errorNumero").style.display= "none";
+              return true
+            }
+          }
+
+          function validarEsquina() {
+            var esquina= document.getElementById("esquina").value
+            if(esquina=="") {
+              document.getElementById("errorEsquina"). innerHTML= "Ingresa una esquina";
+              return false;
+            }else{
+              document.getElementById("errorEsquina").style.display= "none";
+              return true
+            }
+          }
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
