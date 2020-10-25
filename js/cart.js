@@ -92,15 +92,15 @@ document.addEventListener("DOMContentLoaded", function(e){
 </select>
 
       <div class="custom-control custom-radio">
-      <input id="goldradio" name="tEnvio" type="radio" class="custom-control-input" value="1" required="">
+      <input id="goldradio" name="tEnvio" onclick="total();cEnvio()" type="radioe" class="custom-control-input" value="1" required="">
       <label class="custom-control-label" for="goldradio">Premium (2-5 días)</label>
       </div>
       <div class="custom-control custom-radio">
-                        <input id="premiumradio" name="tEnvio2"  onclick="total()" type="radio" value="2" class="custom-control-input" required="">
+                        <input id="premiumradio" name="tEnvio2"  onclick="total2();cEnvio2()" type="radioe" value="2" class="custom-control-input" required="">
                         <label class="custom-control-label" for="premiumradio">Express (5-8 días)</label>
                       </div>
                       <div class="custom-control custom-radio">
-                        <input id="standardradio" name="tEnvio" value="3" type="radio" class="custom-control-input" required="">
+                        <input id="standardradio" name="tEnvio3" onclick="total3();cEnvio3()" value="3" type="radioe" class="custom-control-input" required="">
                         <label class="custom-control-label" for="standardradio">Standard (12 a 15 días)</label>
                       </div>
                       
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function(e){
       <td></td>
       <td></td>
       <td>Costo de envío</td>
-      <td class="text-right"><div id="resultado2"></div></td>
+      <td class="text-right"><div id="resultado3"></div></td>
   </tr>
   
       <tr>	
@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function(e){
       <td></td>
       <td></td>
       <td><strong>Total</strong></td>
-      <td class="text-right"><strong></strong></td>
+      <td class="text-right"><strong><div id="resultado2"></div></strong></td>
   </tr>
   </tbody>
 </table>
@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         
     };
 
-    function total() {
+    function total2() {
       let cantidad= document.getElementById("cant").value;
       let costo= document.getElementById("costo").innerHTML;
       let costoEnvio= document.getElementsByClassName("tEnvio2").innerHTML= ((0.07)* cantidad * costo)
@@ -224,7 +224,48 @@ document.addEventListener("DOMContentLoaded", function(e){
    document.getElementById("resultado2").innerHTML = cuenta2;
       
   };
- 
+  function total() {
+    let cantidad= document.getElementById("cant").value;
+    let costo= document.getElementById("costo").innerHTML;
+    let costoEnvio= document.getElementsByClassName("tEnvio").innerHTML= ((0.15)* cantidad * costo)
+    var cuenta2 = cantidad * costo + costoEnvio;
+ document.getElementById("resultado2").innerHTML = cuenta2;
+    
+};
+
+function total3() {
+  let cantidad= document.getElementById("cant").value;
+  let costo= document.getElementById("costo").innerHTML;
+  let costoEnvio= document.getElementsByClassName("tEnvio3").innerHTML= ((0.05)* cantidad * costo)
+  var cuenta2 = cantidad * costo + costoEnvio;
+document.getElementById("resultado2").innerHTML = cuenta2;
+  
+};
+function cEnvio() {
+  let cantidad= document.getElementById("cant").value;
+    let costo= document.getElementById("costo").innerHTML;
+    let costoEnvio= document.getElementsByClassName("tEnvio").innerHTML= ((0.15)* cantidad * costo)
+    var cuenta3 = costoEnvio;
+ document.getElementById("resultado3").innerHTML = cuenta3;
+
+}
+function cEnvio2() {
+  let cantidad= document.getElementById("cant").value;
+    let costo= document.getElementById("costo").innerHTML;
+    let costoEnvio= document.getElementsByClassName("tEnvio").innerHTML= ((0.07)* cantidad * costo)
+    var cuenta3 = costoEnvio;
+ document.getElementById("resultado3").innerHTML = cuenta3;
+
+}
+function cEnvio3() {
+  let cantidad= document.getElementById("cant").value;
+    let costo= document.getElementById("costo").innerHTML;
+    let costoEnvio= document.getElementsByClassName("tEnvio").innerHTML= ((0.05)* cantidad * costo)
+    var cuenta3 = costoEnvio;
+ document.getElementById("resultado3").innerHTML = cuenta3;
+
+}
+
    
    
     function validarTipoEnvio() {
@@ -233,7 +274,7 @@ document.addEventListener("DOMContentLoaded", function(e){
       i= 0
       while(!validarEnvio && i < envio.length) {
         if(envio[i].checked) {
-          validarEnvio = true
+          validarEnvio = false
       }
       i++;
     }
