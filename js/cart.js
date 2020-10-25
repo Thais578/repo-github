@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function(e){
       <label class="custom-control-label" for="goldradio">Premium (2-5 días)</label>
       </div>
       <div class="custom-control custom-radio">
-                        <input id="premiumradio" name="tEnvio2"  onchange="total(this.value)" type="radio" value="2" class="custom-control-input" required="">
+                        <input id="premiumradio" name="tEnvio2"  onclick="total()" type="radio" value="2" class="custom-control-input" required="">
                         <label class="custom-control-label" for="premiumradio">Express (5-8 días)</label>
                       </div>
                       <div class="custom-control custom-radio">
@@ -219,8 +219,8 @@ document.addEventListener("DOMContentLoaded", function(e){
     function total() {
       let cantidad= document.getElementById("cant").value;
       let costo= document.getElementById("costo").innerHTML;
-      let costoEnvio= document.getElementsByClassName("tEnvio2").innerHTML= (0.35)
-      var cuenta2 = cantidad * costo * costoEnvio;
+      let costoEnvio= document.getElementsByClassName("tEnvio2").innerHTML= ((0.07)* cantidad * costo)
+      var cuenta2 = cantidad * costo + costoEnvio;
    document.getElementById("resultado2").innerHTML = cuenta2;
       
   };
