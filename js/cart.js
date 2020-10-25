@@ -66,55 +66,7 @@ document.addEventListener("DOMContentLoaded", function(e){
           <td></td>
           <td></td>
           <td>
-          <!-- Button trigger modal -->
-<button type="button" onclick="validarTipoEnvio()" class="btn btn-primary btn-sm">
- Tipo de envío
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Tipo de envío</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <div class"container">
-      <div class="col-sm-12 col-md-6 text-left">
-      <p>Dirección: <input type="text" name="nombre"></p>
-      <p>País: <select name="menu"></p>
-  <option value="0">...</option>
-  <option value="1">Uruguay</option>
-  <option value="2">Argentina</option>
-</select>
-
-      <div class="custom-control custom-radio">
-      <input id="goldradio" name="tEnvio" onclick="total();cEnvio()" type="radio" class="custom-control-input" value="1" required="">
-      <label class="custom-control-label" for="goldradio">Premium (2-5 días)</label>
-      </div>
-      <div class="custom-control custom-radio">
-                        <input id="premiumradio" name="tEnvio"  onclick="total2();cEnvio2()" type="radio" value="2" class="custom-control-input" required="">
-                        <label class="custom-control-label" for="premiumradio">Express (5-8 días)</label>
-                      </div>
-                      <div class="custom-control custom-radio">
-                        <input id="standardradio" name="tEnvio" onclick="total3();cEnvio3()" value="3" type="radio" class="custom-control-input" required="">
-                        <label class="custom-control-label" for="standardradio">Standard (12 a 15 días)</label>
-                      </div>
-                      
-                      
-      </div>
-      </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+          
           </td>
           <td class="text-right"></td>
       </tr>
@@ -193,11 +145,38 @@ document.addEventListener("DOMContentLoaded", function(e){
 <div class="col mb-2">
 <div class="row">
 <div class="col-sm-12 col-md-6 text-right">
+
+<div class"container">
+      <div class="col-sm-12 col-md-6 text-left">
+      <p>Dirección: <input type="text" name="nombre"></p>
+      <p>País: <select name="menu"></p>
+  <option value="0">...</option>
+  <option value="1">Uruguay</option>
+  <option value="2">Argentina</option>
+</select>
+
+      <div class="custom-control custom-radio">
+      <input id="goldradio" name="tEnvio" onclick="total();cEnvio()" type="radio" class="custom-control-input" value="1" required="">
+      <label class="custom-control-label" for="goldradio">Premium (2-5 días)</label>
+      </div>
+      <div class="custom-control custom-radio">
+                        <input id="premiumradio" name="tEnvio"  onclick="total2();cEnvio2()" type="radio" value="2" class="custom-control-input" required="">
+                        <label class="custom-control-label" for="premiumradio">Express (5-8 días)</label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input id="standardradio" name="tEnvio" onclick="total3();cEnvio3()" value="3" type="radio" class="custom-control-input" required="">
+                        <label class="custom-control-label" for="standardradio">Standard (12 a 15 días)</label>
+                      </div>
+                      
+                      
+      </div>
+      </div>
 </div>
 </div>
 </div>
 </div>
 </div>
+
 
 <button class="btn btn-secondary btn-sm">Comprar</button>
 <div id="errorEnvio"></div>
@@ -283,7 +262,6 @@ function cEnvio3() {
       return validarEnvio;
     } else{
       document.getElementById("errorEnvio").innerHTML = "";
-      $('#exampleModal').modal('show');
       return validarEnvio;
     }}
     
