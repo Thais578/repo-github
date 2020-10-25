@@ -92,15 +92,15 @@ document.addEventListener("DOMContentLoaded", function(e){
 </select>
 
       <div class="custom-control custom-radio">
-      <input id="goldradio" name="tEnvio" onclick="total();cEnvio()" type="radioe" class="custom-control-input" value="1" required="">
+      <input id="goldradio" name="tEnvio" onclick="total();cEnvio()" type="radio" class="custom-control-input" value="1" required="">
       <label class="custom-control-label" for="goldradio">Premium (2-5 días)</label>
       </div>
       <div class="custom-control custom-radio">
-                        <input id="premiumradio" name="tEnvio2"  onclick="total2();cEnvio2()" type="radioe" value="2" class="custom-control-input" required="">
+                        <input id="premiumradio" name="tEnvio"  onclick="total2();cEnvio2()" type="radio" value="2" class="custom-control-input" required="">
                         <label class="custom-control-label" for="premiumradio">Express (5-8 días)</label>
                       </div>
                       <div class="custom-control custom-radio">
-                        <input id="standardradio" name="tEnvio3" onclick="total3();cEnvio3()" value="3" type="radioe" class="custom-control-input" required="">
+                        <input id="standardradio" name="tEnvio" onclick="total3();cEnvio3()" value="3" type="radio" class="custom-control-input" required="">
                         <label class="custom-control-label" for="standardradio">Standard (12 a 15 días)</label>
                       </div>
                       
@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     function total2() {
       let cantidad= document.getElementById("cant").value;
       let costo= document.getElementById("costo").innerHTML;
-      let costoEnvio= document.getElementsByName("tEnvio2").innerHTML= ((0.07)* cantidad * costo)
+      let costoEnvio= document.getElementById("premiumradio").innerHTML= ((0.07)* cantidad * costo)
       var cuenta2 = cantidad * costo + costoEnvio;
    document.getElementById("resultado2").innerHTML = cuenta2;
       
@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function(e){
   function total() {
     let cantidad= document.getElementById("cant").value;
     let costo= document.getElementById("costo").innerHTML;
-    let costoEnvio= document.getElementsByName("tEnvio").innerHTML= ((0.15)* cantidad * costo)
+    let costoEnvio= document.getElementById("goldradio").innerHTML= ((0.15)* cantidad * costo)
     var cuenta2 = cantidad * costo + costoEnvio;
  document.getElementById("resultado2").innerHTML = cuenta2;
     
@@ -236,7 +236,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 function total3() {
   let cantidad= document.getElementById("cant").value;
   let costo= document.getElementById("costo").innerHTML;
-  let costoEnvio= document.getElementsByName("tEnvio3").innerHTML= ((0.05)* cantidad * costo)
+  let costoEnvio= document.getElementById("standardradio").innerHTML= ((0.05)* cantidad * costo)
   var cuenta2 = cantidad * costo + costoEnvio;
 document.getElementById("resultado2").innerHTML = cuenta2;
   
@@ -244,7 +244,7 @@ document.getElementById("resultado2").innerHTML = cuenta2;
 function cEnvio() {
   let cantidad= document.getElementById("cant").value;
     let costo= document.getElementById("costo").innerHTML;
-    let costoEnvio= document.getElementsByName("tEnvio").innerHTML= ((0.15)* cantidad * costo)
+    let costoEnvio= document.getElementById("goldradio").innerHTML= ((0.15)* cantidad * costo)
     var cuenta3 = costoEnvio;
  document.getElementById("resultado3").innerHTML = cuenta3;
 
@@ -252,7 +252,7 @@ function cEnvio() {
 function cEnvio2() {
   let cantidad= document.getElementById("cant").value;
     let costo= document.getElementById("costo").innerHTML;
-    let costoEnvio= document.getElementsByName("tEnvio").innerHTML= ((0.07)* cantidad * costo)
+    let costoEnvio= document.getElementById("premiumradio").innerHTML= ((0.07)* cantidad * costo)
     var cuenta3 = costoEnvio;
  document.getElementById("resultado3").innerHTML = cuenta3;
 
@@ -260,7 +260,7 @@ function cEnvio2() {
 function cEnvio3() {
   let cantidad= document.getElementById("cant").value;
     let costo= document.getElementById("costo").innerHTML;
-    let costoEnvio= document.getElementsByName("tEnvio").innerHTML= ((0.05)* cantidad * costo)
+    let costoEnvio= document.getElementById("standardradio").innerHTML= ((0.05)* cantidad * costo)
     var cuenta3 = costoEnvio;
  document.getElementById("resultado3").innerHTML = cuenta3;
 
@@ -274,11 +274,11 @@ function cEnvio3() {
       i= 0
       while(!validarEnvio && i < envio.length) {
         if(envio[i].checked) {
-          validarEnvio = false
+          validarEnvio = true
       }
       i++;
     }
-    if(inputUser == null || inputUser == "") {
+    if(validarEnvio) {
       document.getElementById("errorEnvio").innerHTML = "Debes seleccionar un tipo de envío";
       return validarEnvio;
     } else{
