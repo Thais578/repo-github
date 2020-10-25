@@ -148,12 +148,12 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 <div class"container">
       <div class="col-sm-12 col-md-6 text-left">
-      <p>Dirección: <input type="text" name="nombre"></p>
-      <p>País: <select name="menu"></p>
+      <p>Dirección: <input type="text" name="nombre" id="direccion"></p> <div id="errorDireccion"></div>
+      <p>País: <select id="pais"></p>
   <option value="0">...</option>
   <option value="1">Uruguay</option>
-  <option value="2">Argentina</option>
 </select>
+<div id="errorPais"></div>
 
       <div class="custom-control custom-radio">
       <input id="goldradio" name="tEnvio" onclick="total();cEnvio()" type="radio" class="custom-control-input" value="1" required="">
@@ -167,10 +167,13 @@ document.addEventListener("DOMContentLoaded", function(e){
                         <input id="standardradio" name="tEnvio" onclick="total3();cEnvio3()" value="3" type="radio" class="custom-control-input" required="">
                         <label class="custom-control-label" for="standardradio">Standard (12 a 15 días)</label>
                       </div>
+                      <br>
+                      <div id="errorEnvio"></div>
                       
                       
       </div>
       </div>
+      
 </div>
 </div>
 </div>
@@ -178,8 +181,10 @@ document.addEventListener("DOMContentLoaded", function(e){
 </div>
 
 
-<button class="btn btn-secondary btn-sm">Comprar</button>
-<div id="errorEnvio"></div>
+<button class="btn btn-secondary btn-sm" onclick="validarTipoEnvio();validarDireccion();validarTipoEnvio2();validarTipoEnvio3();validarPais();">Comprar</button>
+
+
+
 
     `
     
@@ -248,24 +253,64 @@ function cEnvio3() {
    
    
     function validarTipoEnvio() {
-      var envio= document.getElementsByName("tEnvio");
-      var validarEnvio = false;
-      i= 0
-      while(!validarEnvio && i < envio.length) {
-        if(envio[i].checked) {
-          validarEnvio = true
-      }
-      i++;
-    }
-    if(validarEnvio) {
-      document.getElementById("errorEnvio").innerHTML = "Debes seleccionar un tipo de envío";
-      return validarEnvio;
-    } else{
-      document.getElementById("errorEnvio").innerHTML = "";
-      return validarEnvio;
-    }}
-    
+      var envio= document.getElementById("goldradio").checked
 
+      if(envio=="") {
+        document.getElementById("errorEnvio").innerHTML= "Ingresa una opción";
+        return false;
+     
+     } else {
+      document.getElementById("errorEnvio").style.display= "none";
+        return true
+     }}
+
+     function validarTipoEnvio2() {
+      var envio= document.getElementById("premiumradio").checked
+
+      if(envio=="") {
+        document.getElementById("errorEnvio").innerHTML= "Ingresa una opción";
+        return false;
+     
+     } else {
+      document.getElementById("errorEnvio").style.display= "none";
+        return true
+     }}
+
+     function validarTipoEnvio3() {
+      var envio= document.getElementById("standardradio").checked
+
+      if(envio=="") {
+        document.getElementById("errorEnvio").innerHTML= "Ingresa una opción";
+        return false;
+     
+     } else {
+      document.getElementById("errorEnvio").style.display= "none";
+        return true
+     }}
+
+
+    function validarDireccion() {
+      var direccion= document.getElementById("direccion").value
+      if(direccion=="") {
+        document.getElementById("errorDireccion"). innerHTML= "Ingresa una direccion";
+        return false;
+      }else{
+        document.getElementById("errorDireccion").style.display= "none";
+        return true
+      }
+    }
+function validarPais() {
+    var pais=document.getElementById("pais")
+    if(pais.value==0 ||pais.value == "") {
+    document.getElementById("errorPais"). innerHTML= "Ingresa un pais";
+        return false;
+
+      }else{
+        document.getElementById("errorPais").style.display= "none";
+        return true
+      }}
+    
+    
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
