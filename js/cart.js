@@ -121,12 +121,13 @@ document.addEventListener("DOMContentLoaded", function(e){
  
   <div class="form-body">
     <!-- Card Number -->
-    <input type="text" class="card-number" placeholder="Número de tarjeta">
+    <input type="text" id="nTarjeta"class="card-number" placeholder="Número de tarjeta">
+    <div id="errorNTarjeta"></div>
  
     <!-- Date Field -->
     <div class="date-field">
       <div class="month">
-         <select name="Month">
+         <select name="Month" id="mes">
         <option value=0>Mes</option>
           <option value="january">January</option>
           <option value="february">February</option>
@@ -141,9 +142,10 @@ document.addEventListener("DOMContentLoaded", function(e){
           <option value="november">November</option>
           <option value="december">December</option>
         </select>
+        <div id="errorMes"></div>
       </div>
       <div class="year">
-        <select name="Year">
+        <select name="Year" id="año">
         <option value="0">Año</option>
           <option value="2016">2016</option>
           <option value="2017">2017</option>
@@ -155,17 +157,20 @@ document.addEventListener("DOMContentLoaded", function(e){
           <option value="2023">2023</option>
           <option value="2024">2024</option>
         </select>
+        <div id="errorAño"></div>
       </div>
     </div>
  
     <!-- Card Verification Field -->
     <div class="card-verification">
       <div class="cvv-input">
-        <input type="text" placeholder="CVV">
+        <input type="text" id="cvv" placeholder="CVV">
+        <div id="errorCvv"></div>
       </div>
 
     </div>
   </div>
+  <button  class="btn btn-secondary btn-sm"  onclick="validarAño();validarMes();validarNTarjeta();validarCvv();">Guardar cambios</button>
 </form>
 
        </div>
@@ -175,9 +180,12 @@ document.addEventListener("DOMContentLoaded", function(e){
   <div class="col">
     <div class="collapse multi-collapse" id="multiCollapseExample2">
       <div class="card card-body">
-      <input type="text" class="card-number" placeholder="Banco">
-      <input type="text" class="card-number" placeholder="Número de cuenta">
+      <input type="text" id="banco" class="card-number" placeholder="Banco">
+      <div id="errorBanco"></div>
+      <input type="text" class="card-number" id="nCuenta" placeholder="Número de cuenta">
+      <div id="errorCuenta"></div>
       </div>
+      <button  class="btn btn-secondary btn-sm"  onclick="validarBanco();validarNCuenta();">Guardar cambios</button>
     </div>
   </div>
 </div>
@@ -186,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function(e){
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Guardar cambios</button>
+        
       </div>
     </div>
   </div>
@@ -395,6 +403,7 @@ function validarPais() {
             document.getElementById("errorCantidad").style.display= "none";
             return true
           }}
+
           function validarCalle() {
             var calle= document.getElementById("calle").value
             if(calle=="") {
@@ -427,6 +436,74 @@ function validarPais() {
               return true
             }
           }
+
+          function validarMes() {
+            var mes =document.getElementById("mes")
+            if(mes.value==0 ||mes.value == "") {
+            document.getElementById("errorMes").innerHTML= "Ingresa un mes";
+                return false;
+        
+              }else{
+                document.getElementById("errorMes").style.display= "none";
+                return true
+              }}
+
+              function validarAño() {
+                var año =document.getElementById("año")
+                if(año.value==0 ||año.value == "") {
+                document.getElementById("errorAño").innerHTML= "Ingresa un año";
+                    return false;
+            
+                  }else{
+                    document.getElementById("errorAño").style.display= "none";
+                    return true
+                  }}
+
+
+                  function validarCvv() {
+                    var esquina= document.getElementById("cvv").value
+                    if(esquina=="") {
+                      document.getElementById("errorCvv"). innerHTML= "Ingrese CVV";
+                      return false;
+                    }else{
+                      document.getElementById("errorCvv").style.display= "none";
+                      return true
+                    }
+                  }
+
+                  function validarNCuenta() {
+                    var nCuenta= document.getElementById("nCuenta").value
+                    if(nCuenta=="") {
+                      document.getElementById("errorCuenta"). innerHTML= "Ingrese un número de cuenta";
+                      return false;
+                    }else{
+                      document.getElementById("errorCuenta").style.display= "none";
+                      return true
+                    }
+                  }
+
+                  function validarNTarjeta() {
+                    var nTarjeta= document.getElementById("nTarjeta").value
+                    if(nTarjeta=="") {
+                      document.getElementById("errorNTarjeta"). innerHTML= "Ingrese un número de tarjeta";
+                      return false;
+                    }else{
+                      document.getElementById("errorNTarjeta").style.display= "none";
+                      return true
+                    }
+                  }
+
+                  function validarBanco() {
+                    var banco= document.getElementById("banco").value
+                    if(banco=="") {
+                      document.getElementById("errorBanco"). innerHTML= "Ingrese un banco";
+                      return false;
+                    }else{
+                      document.getElementById("errorBanco").style.display= "none";
+                      return true
+                    }
+                  }
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
