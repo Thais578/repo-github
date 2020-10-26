@@ -265,6 +265,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 <button class="btn btn-secondary btn-sm" onclick="validarTipoEnvio();validarDireccion();validarTipoEnvio2();validarTipoEnvio3();validarPais();validarCantidad();validarCalle();validarNumero();validarEsquina();">Comprar</button>
 <div id="errorCantidad"></div>
+<div id="compraExitosa"></div>
 
 
 
