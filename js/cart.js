@@ -333,6 +333,7 @@ function cEnvio3() {
 
 }
 
+
    
    
     function validarTipoEnvio() {
@@ -426,16 +427,7 @@ function validarPais() {
             }
           }
 
-          function validarEsquina() {
-            var esquina= document.getElementById("esquina").value
-            if(esquina=="") {
-              document.getElementById("errorEsquina"). innerHTML= "Ingresa una esquina";
-              return false;
-            }else{
-              document.getElementById("errorEsquina").style.display= "none";
-              return true
-            }
-          }
+          
 
           function validarMes() {
             var mes =document.getElementById("mes")
@@ -504,6 +496,16 @@ function validarPais() {
                     }
                   }
 
+                  function validarEsquina() {
+                    var esquina= document.getElementById("esquina").value
+                    if(esquina=="") {
+                      document.getElementById("errorEsquina"). innerHTML= "Ingresa una esquina";
+                      return false;
+                    }else{
+                      document.getElementById("errorEsquina").style.display= "none";
+                      return true
+                    }
+                  }
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
