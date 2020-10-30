@@ -161,7 +161,7 @@ background-position:center;
   
 }
 
-.form-control{
+.form-control.input-sm.chat-input{
   background:transparent!important;
   color:white!important;
   font-size: 18px!important;
