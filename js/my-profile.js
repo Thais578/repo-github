@@ -2,19 +2,17 @@ document.addEventListener("DOMContentLoaded", function(e){
     document.getElementById("keyUsuario4").innerHTML=  miStorage.getItem("keyUsuario")
     
   });
-  
-  var persona, myJSON, text, obj;
+  var miStorage= window.sessionStorage;
+  function persona() {
 
-  // Storing data:
-  persona = { name: "Emma", age: 31, city: "Montevideo" };
-  myJSON = JSON.stringify(persona);
-  sessionStorage.setItem("testJSON", myJSON);
-  
-  // Retrieving data:
-  text = sessionStorage.getItem("testJSON");
-  obj = JSON.parse(text);
-  document.getElementById("apellidos").innerHTML = obj.name;
+var nombres= document.getElementById("nombres").value;
 
+  sessionStorage.setItem("keyNombres",nombres);
+ 
+  }
+ 
+  
+  
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
