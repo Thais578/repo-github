@@ -15,6 +15,7 @@ persona.Telefono= document.getElementById("tel").value;
   var myJSON = JSON.stringify(persona);
   localStorage.setItem("Persona", myJSON);
  
+ 
   }
   
   
