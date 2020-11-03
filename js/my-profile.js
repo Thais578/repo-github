@@ -12,9 +12,6 @@ persona.Email= document.getElementById("email").value;
 persona.Edad= document.getElementById("edad").value;
 persona.Telefono= document.getElementById("tel").value;
 
-
-
-
   var myJSON = JSON.stringify(persona);
   localStorage.setItem("Persona", myJSON);
  
