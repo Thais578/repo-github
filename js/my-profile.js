@@ -27,6 +27,17 @@ document.getElementById("demo").innerHTML = obj.Nombres;
   obj = JSON.parse(text);
   document.getElementById("demo2").innerHTML = obj.Apellidos;
   
+  text = localStorage.getItem("Persona");
+  obj = JSON.parse(text);
+  document.getElementById("demo3").innerHTML = obj.Email;
+
+  text = localStorage.getItem("Persona");
+  obj = JSON.parse(text);
+  document.getElementById("demo4").innerHTML = obj.Edad;
+  
+  text = localStorage.getItem("Persona");
+  obj = JSON.parse(text);
+  document.getElementById("demo5").innerHTML = obj.Telefono;
   
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
