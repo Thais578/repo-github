@@ -40,7 +40,29 @@ document.getElementById("demo").innerHTML = obj.Nombres;
   document.getElementById("demo5").innerHTML = obj.Telefono;
 
   
+function edit() {
+  localStorage.clear()
+  text = localStorage.getItem("Persona");
+  obj = JSON.parse(text);
+  document.getElementById("demo").innerHTML = " <input name= name  class= form-control here placeholder= Nombres  type= text>"
 
+  text = localStorage.getItem("Persona");
+  obj = JSON.parse(text);
+  document.getElementById("demo2").innerHTML = " <input name= name  class= form-control here placeholder= Apellidos  type= text>"
+  
+  text = localStorage.getItem("Persona");
+  obj = JSON.parse(text);
+  document.getElementById("demo3").innerHTML = " <input name= name  class= form-control here placeholder= Email  type= text>"
+  
+  text = localStorage.getItem("Persona");
+  obj = JSON.parse(text);
+  document.getElementById("demo4").innerHTML = " <input name= name  class= form-control here placeholder= Edad  type= text>"
+  
+  text = localStorage.getItem("Persona");
+  obj = JSON.parse(text);
+  document.getElementById("demo5").innerHTML = " <input name= name  class= form-control here placeholder= Teléfono  type= text>"
+
+}
  
   
 //Función que se ejecuta una vez que se haya lanzado el evento de
