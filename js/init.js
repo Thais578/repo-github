@@ -50,6 +50,8 @@ document.addEventListener("DOMContentLoaded", function(e){
   
 });
 
+
+
 function cerrarSesion() {
   sessionStorage.clear()
 }
