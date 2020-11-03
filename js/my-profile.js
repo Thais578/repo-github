@@ -18,6 +18,8 @@ persona.Telefono= document.getElementById("tel").value;
   text = localStorage.getItem("Persona");
 obj = JSON.parse(text);
 document.getElementById("nombres").innerHTML = obj.Nombres;
+
+
   }
   
   
