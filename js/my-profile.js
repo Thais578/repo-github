@@ -6,11 +6,17 @@ document.addEventListener("DOMContentLoaded", function(e){
   function persona() {
 
 var persona= {}
-persona.nombres = document.getElementById("nombres").value;
-persona.apellidos= document.getElementById("apellidos").value;
+persona.Nombres = document.getElementById("nombres").value;
+persona.Apellidos= document.getElementById("apellidos").value;
+persona.Email= document.getElementById("email").value;
+persona.Edad= document.getElementById("edad").value;
+persona.Telefono= document.getElementById("tel").value;
+
+
+
 
   var myJSON = JSON.stringify(persona);
-  localStorage.setItem("testJSON", myJSON);
+  localStorage.setItem("Persona", myJSON);
  
   }
   
