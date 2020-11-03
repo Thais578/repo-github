@@ -118,7 +118,21 @@ document.addEventListener("DOMContentLoaded", function(e){
   <div class="form-header">
     <h4 class="title">Detalles</h4>
   </div>
- 
+  <br>
+  <div class="col-50">
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            
+          
+        </div>
+        <label>
+
+
   <div class="form-body">
     <!-- Card Number -->
     <input type="text" id="nTarjeta"class="card-number" placeholder="Número de tarjeta">
@@ -192,10 +206,7 @@ document.addEventListener("DOMContentLoaded", function(e){
       </div>
       </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        
-      </div>
+     
     </div>
   </div>
 </div>
