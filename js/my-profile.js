@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 var persona= {}
 persona.nombres = document.getElementById("nombres").value;
+persona.apellidos= document.getElementById("apellidos").value;
 
   var myJSON = JSON.stringify(persona);
   localStorage.setItem("testJSON", myJSON);
