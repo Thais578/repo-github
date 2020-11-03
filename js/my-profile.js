@@ -15,16 +15,18 @@ persona.Telefono= document.getElementById("tel").value;
   var myJSON = JSON.stringify(persona);
   localStorage.setItem("Persona", myJSON);
  
-  text = localStorage.getItem("Persona");
-obj = JSON.parse(text);
-document.getElementById("demo").innerHTML = obj.Nombres;
 
 
   }
   
-  
+  text = localStorage.getItem("Persona");
+obj = JSON.parse(text);
+document.getElementById("demo").innerHTML = obj.Nombres;
  
-
+  text = localStorage.getItem("Persona");
+  obj = JSON.parse(text);
+  document.getElementById("demo2").innerHTML = obj.Apellidos;
+  
   
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
