@@ -3,7 +3,11 @@ document.addEventListener("DOMContentLoaded", function(e){
     
   });
   var articlesArray= [];
+  var mensajeArray= [];
 
+function compra(mensaje) {
+document.getElementById("compraExito").innerHTML= mensaje
+}
   function cartProducts(array) {
 
     let htmlContentToAppend = "";
@@ -93,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function(e){
   Forma de pago
 </button>
 <!-- Modal -->
-<div class="modal fade" id="metodoDePago" tabindex="-1" aria-labelledby="exampleModalLabelPago" aria-hidden="true">
+<div class="modal fade" id="metodoDePago"  tabindex="-1" aria-labelledby="exampleModalLabelPago" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -120,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function(e){
   </div>
   <br>
   <div class="col-50">
-            <label for="fname">Accepted Cards</label>
+            <label for="fname">Tarjetas aceptadas</label>
             <div class="icon-container">
               <i class="fa fa-cc-visa" style="color:navy;"></i>
               <i class="fa fa-cc-amex" style="color:blue;"></i>
@@ -184,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
     </div>
   </div>
-  <button  class="btn btn-secondary btn-sm"  onclick="validarAño();validarMes();validarNTarjeta();validarCvv();" >Guardar cambios</button>
+  <button  class="btn btn-secondary btn-sm"  id="button"  data-dismiss="modal" onclick="validarAño();validarMes();validarNTarjeta();validarCvv();" >Guardar cambios</button>
 </form>
 
        </div>
@@ -273,11 +277,10 @@ document.addEventListener("DOMContentLoaded", function(e){
 </div>
 </div>
 
+<p id="compraExito"></p>
 
 <button class="btn btn-secondary btn-sm" onclick="validarTipoEnvio();validarDireccion();validarTipoEnvio2();validarTipoEnvio3();validarPais();validarCantidad();validarCalle();validarNumero();validarEsquina();">Comprar</button>
 <div id="errorCantidad"></div>
-<div id="compraExitosa"></div>
-
 
 
 
@@ -519,7 +522,8 @@ function validarPais() {
                     }
                   }
 
-                  
+                 
+      
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -531,5 +535,13 @@ articlesArray = resultObj.data;
       cartProducts(articlesArray);
   }
 });
+
+  getJSONData(CART_BUY_URL).then(function(resultObj) {
+    if (resultObj.status === "ok") {
+  
+  mensajeArray = resultObj.data;
+        compra(mensajeArray.msg);
+    }
+  });
     });
-    
+ 
