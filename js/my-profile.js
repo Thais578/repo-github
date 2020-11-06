@@ -40,7 +40,7 @@ document.getElementById("demo").innerHTML = obj.Nombres;
   document.getElementById("demo5").innerHTML = obj.Telefono;
 
   
-function edit() {
+function borrar() {
   localStorage.clear()
   text = localStorage.getItem("Persona");
   obj = JSON.parse(text);
