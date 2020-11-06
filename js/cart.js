@@ -277,9 +277,9 @@ document.getElementById("compraExito").innerHTML= mensaje
 </div>
 </div>
 
-<p id="compraExito"></p>
+<div id="compraExito" style="display: none"></div>
 
-<button class="btn btn-secondary btn-sm" onclick="validarTipoEnvio();validarDireccion();validarTipoEnvio2();validarTipoEnvio3();validarPais();validarCantidad();validarCalle();validarNumero();validarEsquina();">Comprar</button>
+<button class="btn btn-secondary btn-sm" onclick="validarTipoEnvio();validarDireccion();validarTipoEnvio2();validarTipoEnvio3();validarPais();validarCantidad();validarCalle();validarNumero();validarEsquina(); mostrar();">Comprar</button>
 <div id="errorCantidad"></div>
 
 
@@ -521,11 +521,11 @@ function validarPais() {
                       return true
                     }
                   }
-
-                 
-      function compraE() {
-        
-      }
+                  
+                function mostrar(){
+                  document.getElementById('compraExito').style.display = 'block';
+                  }
+      
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
