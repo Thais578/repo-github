@@ -18,7 +18,7 @@ persona.Telefono= document.getElementById("tel").value;
 
 
   }
-  
+ 
   text = localStorage.getItem("Persona");
 obj = JSON.parse(text);
 document.getElementById("demo").innerHTML = obj.Nombres;
@@ -38,13 +38,13 @@ document.getElementById("demo").innerHTML = obj.Nombres;
   text = localStorage.getItem("Persona");
   obj = JSON.parse(text);
   document.getElementById("demo5").innerHTML = obj.Telefono;
-
+  
   
 function borrar() {
   localStorage.clear()
   text = localStorage.getItem("Persona");
   obj = JSON.parse(text);
-  document.getElementById("demo").innerHTML = " <input name= name  class= form-control here placeholder= Nombres  type= text>"
+  document.getElementById("demo").innerHTML = " <input name= name    class= form-control here placeholder= Nombres  type= text>"
 
   text = localStorage.getItem("Persona");
   obj = JSON.parse(text);
@@ -65,6 +65,10 @@ function borrar() {
 }
  
   
+
+   
+
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
