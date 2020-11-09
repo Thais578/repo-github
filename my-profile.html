@@ -72,35 +72,45 @@
                               <input name="name"  class="form-control here" placeholder="Nombres" id="nombres" type="text"> 
                             </div>
                           </div>
+                          <div id="errorNombres"></div>
+
                           <div class="form-group row">
                             <label for="lastname" class="col-4 col-form-label">Apellidos</label> 
                             <div class="col-8" id="demo2">
                               <input name="lastname" id="apellidos" placeholder="Apellidos" class="form-control here" type="text">
                             </div>
                           </div>
+                          <div id="errorApellidos"></div>
+
                           <div class="form-group row">
                             <label for="email" class="col-4 col-form-label">Email</label> 
                             <div class="col-8" id="demo3">
                               <input id="email" name="email" placeholder="Email" class="form-control form-control here" type="text">
                             </div>
                           </div>
+                          <div id="errorEmail"></div>
+
                           <div class="form-group row">
                             <label for="email" class="col-4 col-form-label">Edad</label> 
                             <div class="col-8" id="demo4">
                               <input id="edad" name="email" placeholder="Edad" class="form-control form-control here" type="text">
                             </div>
                           </div>
+                          <div id="errorEdad"></div>
+
                           <div class="form-group row">
                             <label for="email" class="col-4 col-form-label">Teléfono</label> 
                             <div class="col-8" id="demo5">
                               <input id="tel" name="telefono" placeholder="Teléfono" class="form-control form-control here" type="text">
                             </div>
                           </div>
+                          <div id="errorTel"></div>
+
                           <br>
                           <div class="form-group row">
                             <div class="offset-4 col-8">
-                              <button name="submit" type="button" class="btn btn-primary" onclick="persona();">Guardar los datos</button>
-                              <button name="submit" type="button" class="btn btn-primary" onclick="borrar()">Borrar los datos</button>
+                              <button name="submit" type="button" class="btn btn-primary" onclick="persona();validarNombres();validarApellidos();validarEdad();validarTel();validarEmail();">Guardar los datos</button>
+                              <button name="submit" type="reset" class="btn btn-primary" onclick="borrar()">Borrar los datos</button>
                             </div>
                           </div>
                         </form>
