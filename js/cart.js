@@ -188,8 +188,9 @@ document.getElementById("compraExito").innerHTML= mensaje
 
     </div>
   </div>
-  <button  class="btn btn-secondary btn-sm"  id="button"  data-dismiss="modal" onclick="validarAño();validarMes();validarNTarjeta();validarCvv();" >Guardar cambios</button>
+  <button  class="btn btn-secondary btn-sm"  id="button"   onclick="validarAño();validarMes();validarNTarjeta();validarCvv();" >Guardar cambios</button>
 </form>
+         
 
        </div>
       </div>
