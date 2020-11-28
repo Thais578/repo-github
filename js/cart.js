@@ -240,7 +240,20 @@ document.getElementById("compraExito").innerHTML= mensaje
 <div class="row">
 <div class="col-sm-12 col-md-6 text-right">
 
+
 <div class"container">
+<div class="row justify-content-center">
+  <div class="col-md-9">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Detalles del usuario</h4>
+                    <hr>
+                    </div>
+                    </div>
+              
+            
       <div class="col-sm-12 col-md-6 text-left">
       <h4>Método de envío</h4>
       <p>Dirección: <input type="text" name="nombre" id="direccion"></p> <div id="errorDireccion"></div>
@@ -277,12 +290,16 @@ document.getElementById("compraExito").innerHTML= mensaje
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
 
 <div id="compraExito" style="display: none"></div>
 
+<br>
+
 <button class="btn btn-secondary btn-sm" onclick="validarTipoEnvio();validarDireccion();validarTipoEnvio2();validarTipoEnvio3();validarPais();validarCantidad();validarCalle();validarNumero();validarEsquina(); mostrar();">Comprar</button>
 <div id="errorCantidad"></div>
-
 
 
     `
