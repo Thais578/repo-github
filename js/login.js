@@ -5,7 +5,7 @@ var inputPassword= document.getElementById("inputPassword").value;
   sessionStorage.setItem("keyUsuario",inputUser);
   if(inputUser == null || inputUser == "") {
     document.getElementById("error").innerHTML="Inserte nuevamente el usuario"
-  
+  // Else if, no funcionaba, por lo que tuve que quitar el else.
 } if  (inputPassword == null || inputPassword == "") {
   document.getElementById("error2").innerHTML="Inserte nuevamente la contraseña"
 }else{ 
