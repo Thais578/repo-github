@@ -6,7 +6,7 @@ var inputPassword= document.getElementById("inputPassword").value;
   if(inputUser == null || inputUser == "") {
     document.getElementById("error").innerHTML="Inserte nuevamente el usuario"
   
-}else if (inputPassword == null || inputPassword == "") {
+} if  (inputPassword == null || inputPassword == "") {
   document.getElementById("error2").innerHTML="Inserte nuevamente la contraseña"
 }else{ 
 window.location.href="Pagina.html"
