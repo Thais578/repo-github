@@ -474,3 +474,50 @@ h4{text-align: center}
     color: #fff;
 }
  
+#errorNombres {
+  
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 90%;
+    color: #fd0707;
+}
+
+#errorApellidos {
+  
+  width: 100%;
+  margin-top: .25rem;
+  font-size: 90%;
+  color: #fd0707;
+}
+
+#errorEmail {
+  
+  width: 100%;
+  margin-top: .25rem;
+  font-size: 90%;
+  color: #fd0707;
+}
+
+#errorEdad {
+  
+  width: 100%;
+  margin-top: .25rem;
+  font-size: 90%;
+  color: #fd0707;
+}
+
+#errorTel {
+  
+  width: 100%;
+  margin-top: .25rem;
+  font-size: 90%;
+  color: #fd0707;
+}
+
+#errorEmail {
+  
+  width: 100%;
+  margin-top: .25rem;
+  font-size: 90%;
+  color: #fd0707;
+}
