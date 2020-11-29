@@ -244,7 +244,7 @@ document.getElementById("compraExito").innerHTML= mensaje
 
 <div class"container">
 <div class="row justify-content-center">
-  <div class="col-md-9">
+  
     <div class="card">
         <div class="card-body">
             <div class="row">
@@ -252,7 +252,7 @@ document.getElementById("compraExito").innerHTML= mensaje
                 <h4>Método de envío</h4>
                     <hr>
                     </div>
-                    </div>
+                    
       <div class="col-sm-12 col-md-6 text-left">
       <p>Dirección: <input type="text" name="nombre" id="direccion"></p> <div id="errorDireccion"></div>
       <p>Calle: <input type="text" name="nombre" id="calle"></p> <div id="errorCalle"></div>
@@ -290,7 +290,7 @@ document.getElementById("compraExito").innerHTML= mensaje
 </div>
 </div>
 </div>
-</div>
+
 
 
 
