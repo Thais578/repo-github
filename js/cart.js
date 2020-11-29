@@ -60,26 +60,21 @@ document.getElementById("compraExito").innerHTML= mensaje
             </tbody>
             </table>  
             
-            <div class="col mb-2">
-            <div class="row">
-            <div class="col-sm-12 col-md-6 text-right">
             
             <div class"container">
-            <div class="row justify-content-center">
-              
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
-                            <h4>Método de envío</h4>
+                            <h6>Método de envío</h6>
                                 <hr>
                                 </div>
                                 
-                  <div class="col-sm-12 col-md-6 text-left">
-                  <p>Dirección: <input type="text" name="nombre" id="direccion"></p> <div id="errorDireccion"></div>
-                  <p>Calle: <input type="text" name="nombre" id="calle"></p> <div id="errorCalle"></div>
-                  <p>Número: <input type="text" name="nombre" id="numero"></p> <div id="errorNumero"></div>
-                  <p>Esquina: <input type="text" name="nombre" id="esquina"></p> <div id="errorEsquina"></div>
+                  
+                  <div>Dirección: <input type="text"  name="nombre" id="direccion"></div> <div id="errorDireccion"></div>
+                  <div>Calle: <input type="text"  name="nombre" id="calle"></div> <div id="errorCalle"></div>
+                  <div>Número: <input type="text"  name="nombre" id="numero"></div> <div id="errorNumero"></div>
+                  <div>Esquina: <input type="text"  name="nombre" id="esquina"></div> <div id="errorEsquina"></div>
                   <p>País: <select id="pais"></p>
               <option value="0">...</option>
               <option value="1">Uruguay</option>
@@ -113,7 +108,7 @@ document.getElementById("compraExito").innerHTML= mensaje
             </div>
             </div>
             
-
+            <div class="col-md-12">
               <ul class="list-group mb-3">
                   <li class="list-group-item d-flex justify-content-between lh-condensed">
                     <div>
@@ -132,6 +127,7 @@ document.getElementById("compraExito").innerHTML= mensaje
                     <strong><div id="resultado2"></strong>
                   </li>
                 </ul>
+                <div>
 </div>
 </div>
 <div>
