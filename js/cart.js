@@ -93,11 +93,11 @@ document.getElementById("compraExito").innerHTML= mensaje
       <td>
       
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#metodoDePago">
-  Forma de pago
+<button type="button" class="btn btn-primary btn-sm" onclick="validacionGlobal()" data-toggle="modal" data-target="#metodoDePago">
+ Comprar
 </button>
 <!-- Modal -->
-<div class="modal fade" id="metodoDePago"  tabindex="-1" aria-labelledby="exampleModalLabelPago" aria-hidden="true">
+<div class="modal fade" id="modal2"  tabindex="-1" aria-labelledby="exampleModalLabelPago" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -188,8 +188,9 @@ document.getElementById("compraExito").innerHTML= mensaje
 
     </div>
   </div>
-  <button  class="btn btn-secondary btn-sm"  id="button"   onclick="validarAño();validarMes();validarNTarjeta();validarCvv();" >Guardar cambios</button>
-</form>
+  <button  type="button" class="btn btn-secondary btn-sm"  id="button"   onclick="validacionTotal();">Enviar</button>
+  <span id="compraExito" style="display: none"></span>
+  </form>
          
 
        </div>
@@ -204,7 +205,7 @@ document.getElementById("compraExito").innerHTML= mensaje
       <input type="text" class="card-number" id="nCuenta" placeholder="Número de cuenta">
       <div id="errorCuenta"></div>
       </div>
-      <button  class="btn btn-secondary btn-sm"  onclick="validarBanco();validarNCuenta();">Guardar cambios</button>
+      <button  class="btn btn-secondary btn-sm"  onclick="validarBanco();validarNCuenta();">Enviar</button>
     </div>
   </div>
 </div>
@@ -248,14 +249,11 @@ document.getElementById("compraExito").innerHTML= mensaje
         <div class="card-body">
             <div class="row">
                 <div class="col-md-12">
-                    <h4>Detalles del usuario</h4>
+                <h4>Método de envío</h4>
                     <hr>
                     </div>
                     </div>
-              
-            
       <div class="col-sm-12 col-md-6 text-left">
-      <h4>Método de envío</h4>
       <p>Dirección: <input type="text" name="nombre" id="direccion"></p> <div id="errorDireccion"></div>
       <p>Calle: <input type="text" name="nombre" id="calle"></p> <div id="errorCalle"></div>
       <p>Número: <input type="text" name="nombre" id="numero"></p> <div id="errorNumero"></div>
@@ -275,7 +273,7 @@ document.getElementById("compraExito").innerHTML= mensaje
                         <label class="custom-control-label" for="premiumradio">Express (5-8 días)</label>
                       </div>
                       <div class="custom-control custom-radio">
-                        <input id="standardradio" name="tEnvio" onclick="total3();cEnvio3()" value="3" type="radio" class="custom-control-input" required="">
+                        <input id="standardradio" name="tEnvio" onclick="total3();cEnvio3();" value="3" type="radio" class="custom-control-input" required="">
                         <label class="custom-control-label" for="standardradio">Standard (12 a 15 días)</label>
                       </div>
                       <br>
@@ -294,11 +292,11 @@ document.getElementById("compraExito").innerHTML= mensaje
 </div>
 </div>
 
-<div id="compraExito" style="display: none"></div>
+
 
 <br>
 
-<button class="btn btn-secondary btn-sm" onclick="validarTipoEnvio();validarDireccion();validarTipoEnvio2();validarTipoEnvio3();validarPais();validarCantidad();validarCalle();validarNumero();validarEsquina(); mostrar();">Comprar</button>
+
 <div id="errorCantidad"></div>
 
 
@@ -368,43 +366,24 @@ function cEnvio3() {
 
 
    
-   
+   //Validar radio
     function validarTipoEnvio() {
-      var envio= document.getElementById("goldradio").checked
-
-      if(envio=="") {
-        document.getElementById("errorEnvio").innerHTML= "Ingresa una opción";
-        return false;
+      var envio= document.getElementsByName("tEnvio")
+      var marcadoVacio= false
+     for (let i= 0; i<envio.length; i++) {
+       if (envio [i].checked){
+         marcadoVacio= true
+        }}
+      if(envio) {
+        document.getElementById("errorEnvio").style.display= "none";
+        return true
      
      } else {
-      document.getElementById("errorEnvio").style.display= "none";
-        return true
-     }}
-
-     function validarTipoEnvio2() {
-      var envio= document.getElementById("premiumradio").checked
-
-      if(envio=="") {
-        document.getElementById("errorEnvio").innerHTML= "Ingresa una opción";
+      document.getElementById("errorEnvio").innerHTML= "Ingresa una opción";
         return false;
-     
-     } else {
-      document.getElementById("errorEnvio").style.display= "none";
-        return true
      }}
-
-     function validarTipoEnvio3() {
-      var envio= document.getElementById("standardradio").checked
-
-      if(envio=="") {
-        document.getElementById("errorEnvio").innerHTML= "Ingresa una opción";
-        return false;
+    
      
-     } else {
-      document.getElementById("errorEnvio").style.display= "none";
-        return true
-     }}
-
 
     function validarDireccion() {
       var direccion= document.getElementById("direccion").value
@@ -427,16 +406,7 @@ function validarPais() {
         return true
       }}
     
-      function validarCantidad() {
-        var cantidad =document.getElementById("cant")
-        if(cantidad.value==0 ||cantidad.value == "") {
-        document.getElementById("errorCantidad").innerHTML= "Ingresa una cantidad";
-            return false;
-    
-          }else{
-            document.getElementById("errorCantidad").style.display= "none";
-            return true
-          }}
+      
 
           function validarCalle() {
             var calle= document.getElementById("calle").value
@@ -448,6 +418,39 @@ function validarPais() {
               return true
             }
           }
+
+          function validacionGlobal() {
+            var calle= validarCalle(document.getElementById("calle").value);
+            var pais= validarPais(document.getElementById("pais").value)
+            var direccion= validarDireccion(document.getElementById("direccion").value);
+            var envio= validarTipoEnvio();
+            var esquina=validarEsquina(document.getElementById("esquina").value)
+            var cantidad= validarCantidad(document.getElementById("cant"))
+
+            var todoValido= calle && pais && direccion  && envio && esquina && cantidad ;
+            if (todoValido) {
+              $('#modal2').modal('show');
+            }
+
+
+          }
+
+          //
+
+          function validacionTotal() {
+            var mesT= validarMes(document.getElementById("mes".value))
+            var añoT= validarDireccion(document.getElementById("año").value);
+            var cvvT= validarCvv(document.getElementById("cvv").value);
+            var nTarjetaT=validarNTarjeta(document.getElementById("nTarjeta").value)
+
+            var todoValidado= mesT && añoT && cvvT  && nTarjetaT;
+            if (todoValidado) {
+              document.getElementById("compraExito").style.display="block"
+            
+          }
+          }
+
+          
 
           function validarNumero() {
             var numero= document.getElementById("numero").value
@@ -486,8 +489,8 @@ function validarPais() {
 
 
                   function validarCvv() {
-                    var esquina= document.getElementById("cvv").value
-                    if(esquina=="") {
+                    var cvv= document.getElementById("cvv").value
+                    if(cvv=="") {
                       document.getElementById("errorCvv"). innerHTML= "Ingrese CVV";
                       return false;
                     }else{
@@ -540,9 +543,18 @@ function validarPais() {
                     }
                   }
                   
-                function mostrar(){
-                  document.getElementById('compraExito').style.display = 'block';
-                  }
+                  function validarCantidad() {
+                    var cantidad =document.getElementById("cant")
+                    if(cantidad.value==0 ||cantidad.value == "") {
+                    document.getElementById("errorCantidad").innerHTML= "Ingresa una cantidad";
+                        return false;
+                
+                      }else{
+                        document.getElementById("errorCantidad").style.display= "none";
+                        return true
+                      }}
+
+                
       
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
