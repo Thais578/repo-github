@@ -72,16 +72,16 @@ document.getElementById("compraExito").innerHTML= mensaje
                                 
                   <div class"c">
                   <div class="justify-text-right">
-                  <div>Dirección: <input type="text"  name="nombre" id="direccion"></div> 
+                  <div> Dirección: <input type="text"  name="nombre" id="direccion"></div> 
                   <div id="errorDireccion"></div>
                   <p></p>
-                  <div>Calle: <input type="text"  name="nombre" id="calle"></div> 
+                  <div> Calle: <input type="text"  name="nombre" id="calle"></div> 
                   <div id="errorCalle"></div>
                   <p></p>
-                  <div>Número: <input type="text"  name="nombre" id="numero">
+                  <div> Número: <input type="text"  name="nombre" id="numero">
                   </div> <div id="errorNumero"></div>
                   <p></p>
-                  <div>Esquina: <input type="text"  name="nombre" id="esquina"></div> 
+                  <div> Esquina: <input type="text"  name="nombre" id="esquina"></div> 
                   <div id="errorEsquina"></div>
                   <p></p>
 
