@@ -97,7 +97,7 @@ document.getElementById("compraExito").innerHTML= mensaje
 
                   <div class="row">
                   <div class="col-md-12 mb-3">
-                  <div class="justify-text-center"> Números:<input type="text"  name="nombre" id="numero">
+                  <div class="justify-text-center"> Números: <input type="text"  name="nombre" id="numero">
                   </div></div>
                   <p></p>
                   </div> <div id="errorNumero"></div>
