@@ -78,7 +78,8 @@ document.getElementById("compraExito").innerHTML= mensaje
                   <div class="justify-text-center">
                   <div class="row">
                   <div class="col-md-12 mb-3">
-                  <div> Dirección: <input type="text"  name="nombre" id="direccion"></div> 
+                  
+                  <div class="mx-auto" style="witdth:200px;"> Dirección: <input type="text"  name="nombre" id="direccion"></div> 
                   <p></p>
                   <div id="errorDireccion"></div>
                   <p></p>
@@ -86,7 +87,7 @@ document.getElementById("compraExito").innerHTML= mensaje
                   </div>
                   <div class="row">
                   <div class="col-md-12 mb-3">
-                  <div> Calle: <input type="text"  name="nombre" id="calle"></div>
+                  <div justify-text-center> Calle: <input type="text"  name="nombre" id="calle"></div>
                   <p></p> 
                   <div id="errorCalle"></div>
                   <p></p>
