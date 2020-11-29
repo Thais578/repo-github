@@ -277,8 +277,12 @@ document.getElementById("compraExito").innerHTML= mensaje
       <input type="text" class="card-number" id="nCuenta" placeholder="Número de cuenta">
       <div id="errorCuenta"></div>
       </div>
-      <button  class="btn btn-secondary btn-sm"  onclick="validarcuenta();">Enviar</button>
+      <br>
+      <button  class="btn btn-secondary btn-sm"  onclick="validarCuenta();">Enviar</button>
+      <p></p>
+      <span id="compraExito" name="e" style="display: none"></span>
     </div>
+    
   </div>
 </div>
       </div>
@@ -371,13 +375,13 @@ function cEnvio3() {
        if (envio [i].checked){
          marcVacio= true
         }}
-      if(envio) {
-        document.getElementById("errorEnvio").innerHTML= "Ingresa una opción";
-        return false;
-     
+      if(marcVacio) {
+        
+        document.getElementById("errorEnvio").style.display= "none";
+        return true
      } else {
-      document.getElementById("errorEnvio").style.display= "none";
-      return true
+      document.getElementById("errorEnvio").innerHTML= "Ingresa una opción";
+      return false; 
      }}
     
      
@@ -432,12 +436,12 @@ function validarPais() {
 
 
           }
-          function validarcuenta() {
-            var nCuenta= validarNcuenta(document.getElementById("nCuenta").value);
+          function validarCuenta() {
+            var nCuenta= validarNCuenta(document.getElementById("nCuenta").value);
             var banco= validarBanco(document.getElementById("banco").value);
             var todoValid= nCuenta && banco;
             if (todoValid) {
-              $('#modal2').modal('show');
+              document.getElementsByName("e").style.display="block"
             }
           }
 
