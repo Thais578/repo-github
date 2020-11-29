@@ -32,9 +32,11 @@ document.getElementById("compraExito").innerHTML= mensaje
                               <th scope="col" class="text-center">Precio</th>
                               <th scope="col" class="text-center">Moneda</th>
                               <th scope="col" class="text-center">Eliminar</th>
+                              
 
 
                           </tr>
+                          
                       </thead>
                       
 
@@ -53,11 +55,11 @@ document.getElementById("compraExito").innerHTML= mensaje
                 <td class="text-center">  <div id="costo"> `+ articles.unitCost + ` </div></td>
                 <td class="text-center">   <div> `+ articles.currency +" "+ `  </div></td>
                 <td class="text-center"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-               
-            </tr>
+              
             
             </tbody>
-            </table>
+            </table>  
+            
             <div class="col mb-2">
             <div class="row">
             <div class="col-sm-12 col-md-6 text-right">
@@ -111,7 +113,6 @@ document.getElementById("compraExito").innerHTML= mensaje
             </div>
             </div>
             
-      
 
               <ul class="list-group mb-3">
                   <li class="list-group-item d-flex justify-content-between lh-condensed">
