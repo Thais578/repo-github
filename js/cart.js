@@ -70,17 +70,25 @@ document.getElementById("compraExito").innerHTML= mensaje
                             <h6>Método de envío</h6>
                                 <hr>
                                 </div>
-                                
+                                <div class="row justify-content-md-center">
+                                <div class="col-md-8 order-md-1">            
                   <div class"c">
                   <div class="justify-text-center">
+                  <div class="row">
+                  <div class="col-md-12 mb-3">
                   <div> Dirección: <input type="text"  name="nombre" id="direccion"></div> 
                   <p></p>
                   <div id="errorDireccion"></div>
                   <p></p>
+                  </div>
+                  </div>
+                  <div class="row">
+                  <div class="col-md-12 mb-3">
                   <div> Calle: <input type="text"  name="nombre" id="calle"></div>
                   <p></p> 
                   <div id="errorCalle"></div>
                   <p></p>
+                  </div></div>
                   <div> Número: <input type="text"  name="nombre" id="numero">
                   <p></p>
                   </div> <div id="errorNumero"></div>
@@ -112,7 +120,7 @@ document.getElementById("compraExito").innerHTML= mensaje
                                   <p></p>
                                   <div id="errorEnvio"></div>
 
-                                  
+                                  </div></div>
                                   
                        </div>           
                   </div>
