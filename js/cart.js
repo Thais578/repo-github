@@ -62,6 +62,7 @@ document.getElementById("compraExito").innerHTML= mensaje
             
             
             <div class"container">
+            
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
@@ -115,8 +116,7 @@ document.getElementById("compraExito").innerHTML= mensaje
             </div>
             </div>
             </div>
-            </div>
-            </div>
+            
             
             <div class="col-md-12">
               <ul class="list-group mb-3">
@@ -138,6 +138,8 @@ document.getElementById("compraExito").innerHTML= mensaje
                   </li>
                 </ul>
                 <div>
+                </div>
+                
 </div>
 </div>
 <div>
