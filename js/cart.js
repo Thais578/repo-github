@@ -72,7 +72,7 @@ document.getElementById("compraExito").innerHTML= mensaje
                                 </div>
                                 
                   <div class"c">
-                  <div class="justify-text-right">
+                  <div class="justify-text-center">
                   <div> Dirección: <input type="text"  name="nombre" id="direccion"></div> 
                   <div id="errorDireccion"></div>
                   <p></p>
@@ -81,7 +81,7 @@ document.getElementById("compraExito").innerHTML= mensaje
                   <p></p>
                   <div> Número: <input type="text"  name="nombre" id="numero">
                   </div> <div id="errorNumero"></div>
-                  <p></p>
+                
                   <div> Esquina: <input type="text"  name="nombre" id="esquina"></div> 
                   <div id="errorEsquina"></div>
                   <p></p>
@@ -104,8 +104,9 @@ document.getElementById("compraExito").innerHTML= mensaje
                                     <input id="standardradio" name="tEnvio" onclick="total3();cEnvio3();" value="3" type="radio" class="custom-control-input" required="">
                                     <label class="custom-control-label" for="standardradio">Standard (12 a 15 días)</label>
                                   </div>
-                                  <br>
                                   <div id="errorEnvio"></div>
+
+                                  
                                   
                        </div>           
                   </div>
@@ -259,7 +260,7 @@ document.getElementById("compraExito").innerHTML= mensaje
       <input type="text" class="card-number" id="nCuenta" placeholder="Número de cuenta">
       <div id="errorCuenta"></div>
       </div>
-      <button  class="btn btn-secondary btn-sm"  onclick="validarBanco();validarNCuenta();">Enviar</button>
+      <button  class="btn btn-secondary btn-sm"  onclick="validarcuenta();">Enviar</button>
     </div>
   </div>
 </div>
@@ -275,7 +276,6 @@ document.getElementById("compraExito").innerHTML= mensaje
 
 
 <br>
-
 
 <div id="errorCantidad"></div>
 
@@ -349,18 +349,18 @@ function cEnvio3() {
    //Validar radio
     function validarTipoEnvio() {
       var envio= document.getElementsByName("tEnvio")
-      var marcadoVacio= false
+      var marcVacio = false
      for (let i= 0; i<envio.length; i++) {
        if (envio [i].checked){
-         marcadoVacio= true
+         marcVacio= true
         }}
       if(envio) {
-        document.getElementById("errorEnvio").style.display= "none";
-        return true
+        document.getElementById("errorEnvio").innerHTML= "Ingresa una opción";
+        return false;
      
      } else {
-      document.getElementById("errorEnvio").innerHTML= "Ingresa una opción";
-        return false;
+      document.getElementById("errorEnvio").style.display= "none";
+      return true
      }}
     
      
@@ -403,16 +403,25 @@ function validarPais() {
             var calle= validarCalle(document.getElementById("calle").value);
             var pais= validarPais(document.getElementById("pais").value)
             var direccion= validarDireccion(document.getElementById("direccion").value);
-            var envio= validarTipoEnvio();
+            var tipoenvio= validarTipoEnvio();
             var esquina=validarEsquina(document.getElementById("esquina").value)
             var cantidad= validarCantidad(document.getElementById("cant"))
+            var numero= validarNumero(document.getElementById("numero").value)
 
-            var todoValido= calle && pais && direccion  && envio && esquina && cantidad ;
+            var todoValido= calle && pais && direccion  && tipoenvio && esquina && cantidad && numero ;
             if (todoValido) {
               $('#modal2').modal('show');
             }
 
 
+          }
+          function validarcuenta() {
+            var nCuenta= validarNcuenta(document.getElementById("nCuenta").value);
+            var banco= validarBanco(document.getElementById("banco").value);
+            var todoValid= nCuenta && banco;
+            if (todoValid) {
+              $('#modal2').modal('show');
+            }
           }
 
           //
