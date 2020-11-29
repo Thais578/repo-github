@@ -36,6 +36,7 @@ document.getElementById("compraExito").innerHTML= mensaje
 
                           </tr>
                       </thead>
+                      
 
     <div class="row">
             <div class="col-3">
@@ -55,43 +56,87 @@ document.getElementById("compraExito").innerHTML= mensaje
                
             </tr>
             
+            </tbody>
+            </table>
+            <div class="col mb-2">
+            <div class="row">
+            <div class="col-sm-12 col-md-6 text-right">
+            
+            <div class"container">
+            <div class="row justify-content-center">
+              
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                            <h4>Método de envío</h4>
+                                <hr>
+                                </div>
+                                
+                  <div class="col-sm-12 col-md-6 text-left">
+                  <p>Dirección: <input type="text" name="nombre" id="direccion"></p> <div id="errorDireccion"></div>
+                  <p>Calle: <input type="text" name="nombre" id="calle"></p> <div id="errorCalle"></div>
+                  <p>Número: <input type="text" name="nombre" id="numero"></p> <div id="errorNumero"></div>
+                  <p>Esquina: <input type="text" name="nombre" id="esquina"></p> <div id="errorEsquina"></div>
+                  <p>País: <select id="pais"></p>
+              <option value="0">...</option>
+              <option value="1">Uruguay</option>
+            </select>
+            <div id="errorPais"></div>
+            
+                  <div class="custom-control custom-radio">
+                  <input id="goldradio" name="tEnvio" onclick="total();cEnvio()" type="radio" class="custom-control-input" value="1" required="">
+                  <label class="custom-control-label" for="goldradio">Premium (2-5 días)</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                                    <input id="premiumradio" name="tEnvio"  onclick="total2();cEnvio2()" type="radio" value="2" class="custom-control-input" required="">
+                                    <label class="custom-control-label" for="premiumradio">Express (5-8 días)</label>
+                                  </div>
+                                  <div class="custom-control custom-radio">
+                                    <input id="standardradio" name="tEnvio" onclick="total3();cEnvio3();" value="3" type="radio" class="custom-control-input" required="">
+                                    <label class="custom-control-label" for="standardradio">Standard (12 a 15 días)</label>
+                                  </div>
+                                  <br>
+                                  <div id="errorEnvio"></div>
+                                  
+                                  
+                  </div>
+                  </div>
+                  
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            
+      
 
-          <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>Sub-Total</td>
-          <td class="text-right"> <div id="resultado"></div></td>
-          
-      </tr>
-      
-      <tr>	
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>
-          
-          </td>
-          <td class="text-right"></td>
-      </tr>
-      <tr>	
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>Costo de envío</td>
-      <td class="text-right"><div id="resultado3"></div></td>
-  </tr>
-  
-      <tr>	
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>
-      
+              <ul class="list-group mb-3">
+                  <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <div>
+                      <h6 class="my-0">Subtotal</h6>
+                    </div>
+                    <span class="text-muted"><div id="resultado"></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <div>
+                      <h6 class="my-0">Método de envío</h6>
+                    </div>
+                    <span class="text-muted"><div id="resultado3"></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between">
+                    <span>Total</span>
+                    <strong><div id="resultado2"></strong>
+                  </li>
+                </ul>
+</div>
+</div>
+<div>
+
+
+
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary btn-sm" onclick="validacionGlobal()" data-toggle="modal" data-target="#metodoDePago">
  Comprar
@@ -216,82 +261,8 @@ document.getElementById("compraExito").innerHTML= mensaje
     </div>
   </div>
 </div>
-      </td>
-      <td class="text-right"></td>
-  </tr>
-      
-
-
-
   
-
-      <tr>	
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td><strong>Total</strong></td>
-      <td class="text-right"><strong><div id="resultado2"></div></strong></td>
-  </tr>
-  </tbody>
-</table>
-</div>
-</div>
-<div class="col mb-2">
-<div class="row">
-<div class="col-sm-12 col-md-6 text-right">
-
-
-<div class"container">
-<div class="row justify-content-center">
-  
-    <div class="card">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-12">
-                <h4>Método de envío</h4>
-                    <hr>
-                    </div>
-                    
-      <div class="col-sm-12 col-md-6 text-left">
-      <p>Dirección: <input type="text" name="nombre" id="direccion"></p> <div id="errorDireccion"></div>
-      <p>Calle: <input type="text" name="nombre" id="calle"></p> <div id="errorCalle"></div>
-      <p>Número: <input type="text" name="nombre" id="numero"></p> <div id="errorNumero"></div>
-      <p>Esquina: <input type="text" name="nombre" id="esquina"></p> <div id="errorEsquina"></div>
-      <p>País: <select id="pais"></p>
-  <option value="0">...</option>
-  <option value="1">Uruguay</option>
-</select>
-<div id="errorPais"></div>
-
-      <div class="custom-control custom-radio">
-      <input id="goldradio" name="tEnvio" onclick="total();cEnvio()" type="radio" class="custom-control-input" value="1" required="">
-      <label class="custom-control-label" for="goldradio">Premium (2-5 días)</label>
-      </div>
-      <div class="custom-control custom-radio">
-                        <input id="premiumradio" name="tEnvio"  onclick="total2();cEnvio2()" type="radio" value="2" class="custom-control-input" required="">
-                        <label class="custom-control-label" for="premiumradio">Express (5-8 días)</label>
-                      </div>
-                      <div class="custom-control custom-radio">
-                        <input id="standardradio" name="tEnvio" onclick="total3();cEnvio3();" value="3" type="radio" class="custom-control-input" required="">
-                        <label class="custom-control-label" for="standardradio">Standard (12 a 15 días)</label>
-                      </div>
-                      <br>
-                      <div id="errorEnvio"></div>
-                      
-                      
-      </div>
-      </div>
-      
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
+ 
 
 
 <br>
