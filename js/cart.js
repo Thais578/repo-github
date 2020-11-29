@@ -70,11 +70,21 @@ document.getElementById("compraExito").innerHTML= mensaje
                                 <hr>
                                 </div>
                                 
-                  
-                  <div>Dirección: <input type="text"  name="nombre" id="direccion"></div> <div id="errorDireccion"></div>
-                  <div>Calle: <input type="text"  name="nombre" id="calle"></div> <div id="errorCalle"></div>
-                  <div>Número: <input type="text"  name="nombre" id="numero"></div> <div id="errorNumero"></div>
-                  <div>Esquina: <input type="text"  name="nombre" id="esquina"></div> <div id="errorEsquina"></div>
+                  <div class"c">
+                  <div class="justify-text-right">
+                  <div>Dirección: <input type="text"  name="nombre" id="direccion"></div> 
+                  <div id="errorDireccion"></div>
+                  <p></p>
+                  <div>Calle: <input type="text"  name="nombre" id="calle"></div> 
+                  <div id="errorCalle"></div>
+                  <p></p>
+                  <div>Número: <input type="text"  name="nombre" id="numero">
+                  </div> <div id="errorNumero"></div>
+                  <p></p>
+                  <div>Esquina: <input type="text"  name="nombre" id="esquina"></div> 
+                  <div id="errorEsquina"></div>
+                  <p></p>
+
                   <p>País: <select id="pais"></p>
               <option value="0">...</option>
               <option value="1">Uruguay</option>
@@ -96,7 +106,7 @@ document.getElementById("compraExito").innerHTML= mensaje
                                   <br>
                                   <div id="errorEnvio"></div>
                                   
-                                  
+                       </div>           
                   </div>
                   </div>
                   
