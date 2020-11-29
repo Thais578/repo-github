@@ -74,15 +74,19 @@ document.getElementById("compraExito").innerHTML= mensaje
                   <div class"c">
                   <div class="justify-text-center">
                   <div> Dirección: <input type="text"  name="nombre" id="direccion"></div> 
+                  <p></p>
                   <div id="errorDireccion"></div>
                   <p></p>
-                  <div> Calle: <input type="text"  name="nombre" id="calle"></div> 
+                  <div> Calle: <input type="text"  name="nombre" id="calle"></div>
+                  <p></p> 
                   <div id="errorCalle"></div>
                   <p></p>
                   <div> Número: <input type="text"  name="nombre" id="numero">
+                  <p></p>
                   </div> <div id="errorNumero"></div>
-                
+                  <p></p>
                   <div> Esquina: <input type="text"  name="nombre" id="esquina"></div> 
+                  <p></p>
                   <div id="errorEsquina"></div>
                   <p></p>
 
@@ -90,8 +94,9 @@ document.getElementById("compraExito").innerHTML= mensaje
               <option value="0">...</option>
               <option value="1">Uruguay</option>
             </select>
+            <p></p>
             <div id="errorPais"></div>
-            
+            <p></p>
                   <div class="custom-control custom-radio">
                   <input id="goldradio" name="tEnvio" onclick="total();cEnvio()" type="radio" class="custom-control-input" value="1" required="">
                   <label class="custom-control-label" for="goldradio">Premium (2-5 días)</label>
@@ -104,6 +109,7 @@ document.getElementById("compraExito").innerHTML= mensaje
                                     <input id="standardradio" name="tEnvio" onclick="total3();cEnvio3();" value="3" type="radio" class="custom-control-input" required="">
                                     <label class="custom-control-label" for="standardradio">Standard (12 a 15 días)</label>
                                   </div>
+                                  <p></p>
                                   <div id="errorEnvio"></div>
 
                                   
@@ -118,9 +124,12 @@ document.getElementById("compraExito").innerHTML= mensaje
             </div>
             </div>
             
-            
+           <p></p>
+           <p></p> 
             <div class="col-md-12">
+            <p></p>
               <ul class="list-group mb-3">
+              <p></p>
                   <li class="list-group-item d-flex justify-content-between lh-condensed">
                     <div>
                       <h6 class="my-0">Subtotal</h6>
