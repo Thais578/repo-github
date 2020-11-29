@@ -278,9 +278,8 @@ document.getElementById("compraExito").innerHTML= mensaje
       <div id="errorCuenta"></div>
       </div>
       <br>
-      <button  class="btn btn-secondary btn-sm"  onclick="validarCuenta();">Enviar</button>
-      <p></p>
-      <span id="compraExito" name="e" style="display: none"></span>
+      <button type="button" class="btn btn-secondary btn-sm"  onclick="validarCuenta();">Enviar</button>
+      <span id="compraExito2" name="e"></span>
     </div>
     
   </div>
@@ -441,7 +440,7 @@ function validarPais() {
             var banco= validarBanco(document.getElementById("banco").value);
             var todoValid= nCuenta && banco;
             if (todoValid) {
-              document.getElementsByName("e").style.display="block"
+              document.getElementById("compraExito2").innerHTML="¡Compra exitosa!"
             }
           }
 
