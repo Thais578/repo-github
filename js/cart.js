@@ -63,10 +63,12 @@ document.getElementById("compraExito").innerHTML= mensaje
             
             <div class"container">
             
+            
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
+                            <div class="mx-auto" style="witdth:200px;"
                             <h6>Método de envío</h6>
                                 <hr>
                                 </div>
@@ -125,7 +127,7 @@ document.getElementById("compraExito").innerHTML= mensaje
                        </div>           
                   </div>
                   </div>
-                  
+                  </div>
             </div>
             </div>
             </div>
